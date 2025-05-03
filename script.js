@@ -103,6 +103,34 @@ document.addEventListener('DOMContentLoaded', function () {
             'security-service': 'Penetration Testing',
             'security-desc': 'Comprehensive security assessment to identify vulnerabilities in your application before hackers do.',
 
+            // Idea Analysis Section
+            'idea-title': 'Idea Analysis & Validation',
+            'idea-intro-title': 'Transform Your Concept into a Viable Product',
+            'idea-intro-desc': 'Great apps start with great ideas, but not all ideas translate into successful products. Our idea analysis and validation service helps you refine your concept, identify your target market, and validate your assumptions before investing in full-scale development.',
+
+            // UI/UX Section
+            'uiux-title': 'UI/UX Design',
+            'uiux-intro-title': 'Create Delightful User Experiences',
+            'uiux-intro-desc': 'The success of your app depends heavily on how users interact with it. Our UI/UX design process focuses on creating intuitive, engaging, and visually appealing interfaces that enhance user satisfaction and drive retention.',
+
+            // Development Section
+            'dev-title': 'App Development',
+            'dev-intro-title': 'Bring Your Vision to Life',
+            'dev-intro-desc': 'Our development team specializes in creating high-performance, cross-platform applications using Flutter for frontend and FastAPI for backend services. This combination ensures rapid development, beautiful interfaces, and robust, scalable backend systems.',
+
+            // Deployment Section
+            'deploy-title': 'App Deployment',
+            'deploy-intro-title': 'From Development to Your Users\' Hands',
+            'deploy-intro-desc': 'Getting your app to market involves navigating complex submission processes, optimizing for different platforms, and ensuring everything complies with store guidelines. We handle the entire deployment process so you can focus on growing your user base.',
+
+            // Security Section
+            'security-title': 'Application Security & Penetration Testing',
+            'security-intro-title': 'Why Security Matters',
+            'security-intro-desc': 'In today\'s digital landscape, security isn\'t optional—it\'s essential. A single vulnerability can lead to data breaches, compromised user information, and irreparable damage to your brand\'s reputation.',
+
+            // About Section
+            'about-title': 'About Me',
+
             // Contact section
             'contact-title': 'Let\'s Connect',
             'contact-intro': 'Get in touch with me directly using one of the methods below:',
@@ -142,8 +170,36 @@ document.addEventListener('DOMContentLoaded', function () {
             'security-service': 'اختبار الاختراق',
             'security-desc': 'فحص أمني شامل لاكتشاف الثغرات في تطبيقك قبل ما الهاكرز يلاقوها.',
 
+            // Idea Analysis Section
+            'idea-title': 'تحليل وتقييم الفكرة',
+            'idea-intro-title': 'حول مفهومك لمنتج قابل للتطبيق',
+            'idea-intro-desc': 'التطبيقات الرائعة تبدأ بأفكار عظيمة، لكن مش كل الأفكار بتتحول لمنتجات ناجحة. خدمة تحليل وتقييم الفكرة بتساعدك تحسن مفهومك، وتحدد السوق المستهدف، وتتحقق من افتراضاتك قبل الاستثمار في التطوير الكامل.',
+
+            // UI/UX Section
+            'uiux-title': 'تصميم واجهة المستخدم',
+            'uiux-intro-title': 'إنشاء تجارب مستخدم ممتعة',
+            'uiux-intro-desc': 'نجاح تطبيقك يعتمد بشكل كبير على تفاعل المستخدمين معاه. عملية تصميم واجهة المستخدم بتركز على إنشاء واجهات بديهية وجذابة وجميلة بصريًا بتعزز رضا المستخدم وتزيد من اهتمامه.',
+
+            // Development Section
+            'dev-title': 'تطوير التطبيقات',
+            'dev-intro-title': 'حول رؤيتك لواقع',
+            'dev-intro-desc': 'فريق التطوير لدينا متخصص في إنشاء تطبيقات عالية الأداء ومتعددة المنصات باستخدام Flutter للواجهة الأمامية و FastAPI للخدمات الخلفية. هذه التركيبة بتضمن تطوير سريع وواجهات جميلة وأنظمة خلفية قوية وقابلة للتوسع.',
+
+            // Deployment Section
+            'deploy-title': 'نشر التطبيقات',
+            'deploy-intro-title': 'من التطوير لأيدي المستخدمين',
+            'deploy-intro-desc': 'وصول تطبيقك للسوق بيتضمن التعامل مع عمليات تقديم معقدة، والتحسين لمنصات مختلفة، والتأكد من التوافق مع إرشادات المتاجر. إحنا بنتعامل مع عملية النشر بالكامل عشان تقدر تركز على زيادة قاعدة المستخدمين.',
+
+            // Security Section
+            'security-title': 'أمان التطبيقات واختبار الاختراق',
+            'security-intro-title': 'ليه الأمان مهم',
+            'security-intro-desc': 'في العالم الرقمي الحالي، الأمان مش اختياري - ده ضروري. ثغرة واحدة ممكن تؤدي لتسريب البيانات، والمعلومات الشخصية للمستخدمين، وضرر لا يمكن إصلاحه لسمعة علامتك التجارية.',
+
+            // About Section
+            'about-title': 'عننا',
+
             // Contact section
-            'contact-title': 'اتصل بينا',
+            'contact-title': 'تواصل معانا',
             'contact-intro': 'تواصل معانا مباشرة باستخدام إحدى الطرق دي:',
             'follow-us': 'تابعنا',
 
@@ -242,6 +298,107 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
+            // Detailed Idea Analysis section
+            const ideaSection = document.querySelector('#idea-analysis');
+            if (ideaSection) {
+                const sectionTitle = ideaSection.querySelector('h2');
+                if (sectionTitle && !sectionTitle.hasAttribute('data-lang')) {
+                    sectionTitle.setAttribute('data-lang', 'idea-title');
+                }
+
+                const introTitle = ideaSection.querySelector('.service-intro h3');
+                if (introTitle && !introTitle.hasAttribute('data-lang')) {
+                    introTitle.setAttribute('data-lang', 'idea-intro-title');
+                }
+
+                const introDesc = ideaSection.querySelector('.service-intro p');
+                if (introDesc && !introDesc.hasAttribute('data-lang')) {
+                    introDesc.setAttribute('data-lang', 'idea-intro-desc');
+                }
+            }
+
+            // Detailed UI/UX section
+            const uiuxSection = document.querySelector('#ui-ux');
+            if (uiuxSection) {
+                const sectionTitle = uiuxSection.querySelector('h2');
+                if (sectionTitle && !sectionTitle.hasAttribute('data-lang')) {
+                    sectionTitle.setAttribute('data-lang', 'uiux-title');
+                }
+
+                const introTitle = uiuxSection.querySelector('.service-intro h3');
+                if (introTitle && !introTitle.hasAttribute('data-lang')) {
+                    introTitle.setAttribute('data-lang', 'uiux-intro-title');
+                }
+
+                const introDesc = uiuxSection.querySelector('.service-intro p');
+                if (introDesc && !introDesc.hasAttribute('data-lang')) {
+                    introDesc.setAttribute('data-lang', 'uiux-intro-desc');
+                }
+            }
+
+            // Detailed Development section
+            const devSection = document.querySelector('#development');
+            if (devSection) {
+                const sectionTitle = devSection.querySelector('h2');
+                if (sectionTitle && !sectionTitle.hasAttribute('data-lang')) {
+                    sectionTitle.setAttribute('data-lang', 'dev-title');
+                }
+
+                const introTitle = devSection.querySelector('.service-intro h3');
+                if (introTitle && !introTitle.hasAttribute('data-lang')) {
+                    introTitle.setAttribute('data-lang', 'dev-intro-title');
+                }
+
+                const introDesc = devSection.querySelector('.service-intro p');
+                if (introDesc && !introDesc.hasAttribute('data-lang')) {
+                    introDesc.setAttribute('data-lang', 'dev-intro-desc');
+                }
+            }
+
+            // Detailed Deployment section
+            const deploySection = document.querySelector('#deployment');
+            if (deploySection) {
+                const sectionTitle = deploySection.querySelector('h2');
+                if (sectionTitle && !sectionTitle.hasAttribute('data-lang')) {
+                    sectionTitle.setAttribute('data-lang', 'deploy-title');
+                }
+
+                const introTitle = deploySection.querySelector('.service-intro h3');
+                if (introTitle && !introTitle.hasAttribute('data-lang')) {
+                    introTitle.setAttribute('data-lang', 'deploy-intro-title');
+                }
+
+                const introDesc = deploySection.querySelector('.service-intro p');
+                if (introDesc && !introDesc.hasAttribute('data-lang')) {
+                    introDesc.setAttribute('data-lang', 'deploy-intro-desc');
+                }
+            }
+
+            // Security section
+            const securitySection = document.querySelector('#pentest');
+            if (securitySection) {
+                const sectionTitle = securitySection.querySelector('h2');
+                if (sectionTitle && !sectionTitle.hasAttribute('data-lang')) {
+                    sectionTitle.setAttribute('data-lang', 'security-title');
+                }
+
+                const introTitle = securitySection.querySelector('.pentest-intro h3');
+                if (introTitle && !introTitle.hasAttribute('data-lang')) {
+                    introTitle.setAttribute('data-lang', 'security-intro-title');
+                }
+
+                const introDesc = securitySection.querySelector('.pentest-intro p:first-of-type');
+                if (introDesc && !introDesc.hasAttribute('data-lang')) {
+                    introDesc.setAttribute('data-lang', 'security-intro-desc');
+                }
+            }
+
+            // About section
+            const aboutTitle = document.querySelector('.about-section h2');
+            if (aboutTitle && !aboutTitle.hasAttribute('data-lang')) {
+                aboutTitle.setAttribute('data-lang', 'about-title');
+            }
+
             // Contact section
             const contactTitle = document.querySelector('.contact-section h2');
             if (contactTitle && !contactTitle.hasAttribute('data-lang')) {
@@ -274,9 +431,13 @@ document.addEventListener('DOMContentLoaded', function () {
         document.documentElement.lang = lang;
 
         if (lang === 'en') {
+            document.body.classList.remove('rtl');
             document.body.classList.add('ltr');
+            document.body.style.direction = 'ltr';
         } else {
             document.body.classList.remove('ltr');
+            document.body.classList.add('rtl');
+            document.body.style.direction = 'rtl';
         }
 
         const elements = document.querySelectorAll('[data-lang]');

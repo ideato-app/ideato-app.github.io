@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات تطوير التطبيقات</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <header>
+        <nav class="glass-nav">
+            <div class="logo">
+                <img src="img/logo.png" alt="Ideato App Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero" data-lang="nav-home">Home</a></li>
+                <li><a href="#services" data-lang="nav-services">Services</a></li>
+                <!-- <li><a href="#idea-analysis" data-lang="nav-idea">Idea Analysis</a></li> -->
+                <li><a href="#ui-ux" data-lang="nav-uiux">UI/UX</a></li>
+                <li><a href="#development" data-lang="nav-dev">Development</a></li>
+                <li><a href="#deployment" data-lang="nav-deploy">Deployment</a></li>
+                <li><a href="#pentest" data-lang="nav-security">Security</a></li>
+                <li><a href="#about" data-lang="nav-about">About</a></li>
+                <li><a href="#contact" data-lang="nav-contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="#contact" class="nav-connect-btn">Connect with Us</a>
+                <div class="language-switcher">
+                    <button id="lang-ar" class="lang-btn active">AR</button>
+                    <button id="lang-en" class="lang-btn">EN</button>
+                </div>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="glass-card hero-content">
+                <h1>Turn Your Idea into a Real App</h1>
+                <p>We help you bring your ideas to life using Flutter and FastAPI.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="connect-button">Connect with Us</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <h2>Our Services</h2>
+            <div class="services-container">
+                <div class="glass-card service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Idea Analysis & Validation</h3>
+                    <p>We help you refine your concept and validate market potential.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful, intuitive interfaces that users love.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>App Development</h3>
+                    <p>Cross-platform development with Flutter and robust backends with FastAPI.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>App Deployment</h3>
+                    <p>We handle the entire process of publishing to app stores.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Penetration Testing</h3>
+                    <p>Comprehensive security assessment to identify vulnerabilities in your application before hackers
+                        do.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="idea-analysis" class="detailed-service-section">
+            <h2>Idea Analysis & Validation</h2>
+            <div class="detailed-service-container">
+                <div class="glass-card service-intro">
+                    <h3>Transform Your Concept into a Viable Product</h3>
+                    <p>Great apps start with great ideas, but not all ideas translate into successful products. Our idea
+                        analysis and validation service helps you refine your concept, identify your target market, and
+                        validate your assumptions before investing in full-scale development.</p>
+                </div>
+
+                <div class="service-details">
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Market Research</h3>
+                        <p>We conduct thorough market research to identify your target audience, analyze competitors,
+                            and determine market gaps that your app can fill.</p>
+                        <ul>
+                            <li>Competitor analysis</li>
+                            <li>Target audience identification</li>
+                            <li>Market trends evaluation</li>
+                            <li>SWOT analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>User Interviews</h3>
+                        <p>We engage with potential users to gather insights, understand pain points, and validate
+                            whether your solution addresses real needs.</p>
+                        <ul>
+                            <li>Focus group discussions</li>
+                            <li>One-on-one interviews</li>
+                            <li>User surveys</li>
+                            <li>Feedback analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Feasibility Study</h3>
+                        <p>We assess the technical, financial, and operational feasibility of your idea to ensure that
+                            it can be successfully implemented.</p>
+                        <ul>
+                            <li>Technical feasibility assessment</li>
+                            <li>Cost-benefit analysis</li>
+                            <li>Resource requirements</li>
+                            <li>Timeline estimation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card service-outcome">
+                    <h3>What You'll Get</h3>
+                    <div class="outcome-list">
+                        <div class="outcome-item">
+                            <i class="fas fa-file-alt"></i>
+                            <p>Comprehensive validation report</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-bullseye"></i>
+                            <p>Refined product vision</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-tasks"></i>
+                            <p>Prioritized feature list</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-road"></i>
+                            <p>Strategic roadmap</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ui-ux" class="detailed-service-section">
+            <h2>UI/UX Design</h2>
+            <div class="detailed-service-container">
+                <div class="glass-card service-intro">
+                    <h3>Create Delightful User Experiences</h3>
+                    <p>The success of your app depends heavily on how users interact with it. Our UI/UX design process
+                        focuses on creating intuitive, engaging, and visually appealing interfaces that enhance user
+                        satisfaction and drive retention.</p>
+                </div>
+
+                <div class="service-details">
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3>User Research</h3>
+                        <p>We start by understanding your users' needs, motivations, and behaviors to create experiences
+                            that resonate with them.</p>
+                        <ul>
+                            <li>User personas development</li>
+                            <li>Journey mapping</li>
+                            <li>Behavioral analysis</li>
+                            <li>Usability testing</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-pencil-ruler"></i>
+                        </div>
+                        <h3>Information Architecture</h3>
+                        <p>We organize content and functionality in a way that's intuitive and accessible to users,
+                            creating a solid foundation for your app.</p>
+                        <ul>
+                            <li>Content structure</li>
+                            <li>User flow diagrams</li>
+                            <li>Wireframing</li>
+                            <li>Navigation patterns</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Visual Design</h3>
+                        <p>We create visually stunning interfaces that align with your brand identity and enhance user
+                            engagement.</p>
+                        <ul>
+                            <li>Brand-aligned UI elements</li>
+                            <li>Color scheme development</li>
+                            <li>Typography selection</li>
+                            <li>Custom iconography</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card service-outcome">
+                    <h3>What You'll Get</h3>
+                    <div class="outcome-list">
+                        <div class="outcome-item">
+                            <i class="fas fa-sitemap"></i>
+                            <p>Information architecture map</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <p>Interactive prototypes</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-swatchbook"></i>
+                            <p>UI style guide</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-file-export"></i>
+                            <p>Export-ready design assets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="development" class="detailed-service-section">
+            <h2>App Development</h2>
+            <div class="detailed-service-container">
+                <div class="glass-card service-intro">
+                    <h3>Bring Your Vision to Life</h3>
+                    <p>Our development team specializes in creating high-performance, cross-platform applications using
+                        Flutter for frontend and FastAPI for backend services. This combination ensures rapid
+                        development, beautiful interfaces, and robust, scalable backend systems.</p>
+                </div>
+
+                <div class="service-details">
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Frontend Development</h3>
+                        <p>We use Flutter to create beautiful, responsive interfaces that work seamlessly across iOS,
+                            Android, and web platforms.</p>
+                        <ul>
+                            <li>Cross-platform compatibility</li>
+                            <li>Custom animations</li>
+                            <li>Responsive layouts</li>
+                            <li>Performance optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Backend Development</h3>
+                        <p>We build powerful, scalable backend services using FastAPI that provide the foundation for
+                            your app's functionality.</p>
+                        <ul>
+                            <li>RESTful API development</li>
+                            <li>Database design</li>
+                            <li>Authentication systems</li>
+                            <li>Third-party integrations</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Quality Assurance</h3>
+                        <p>We implement rigorous testing processes to ensure your app is bug-free and performs as
+                            expected.</p>
+                        <ul>
+                            <li>Automated testing</li>
+                            <li>Performance testing</li>
+                            <li>Cross-device testing</li>
+                            <li>Regression testing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card service-outcome">
+                    <h3>What You'll Get</h3>
+                    <div class="outcome-list">
+                        <div class="outcome-item">
+                            <i class="fas fa-code"></i>
+                            <p>Clean, documented source code</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-database"></i>
+                            <p>Scalable backend architecture</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-bug"></i>
+                            <p>Thoroughly tested application</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-file-code"></i>
+                            <p>Technical documentation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="deployment" class="detailed-service-section">
+            <h2>App Deployment</h2>
+            <div class="detailed-service-container">
+                <div class="glass-card service-intro">
+                    <h3>From Development to Your Users' Hands</h3>
+                    <p>Getting your app to market involves navigating complex submission processes, optimizing for
+                        different platforms, and ensuring everything complies with store guidelines. We handle the
+                        entire deployment process so you can focus on growing your user base.</p>
+                </div>
+
+                <div class="service-details">
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fab fa-app-store-ios"></i>
+                        </div>
+                        <h3>App Store Submission</h3>
+                        <p>We prepare and submit your app to the Apple App Store, ensuring compliance with all
+                            guidelines and requirements.</p>
+                        <ul>
+                            <li>App Store listing preparation</li>
+                            <li>Screenshots and previews</li>
+                            <li>Metadata optimization</li>
+                            <li>Guidelines compliance check</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fab fa-google-play"></i>
+                        </div>
+                        <h3>Google Play Submission</h3>
+                        <p>We optimize your app for Android and handle the entire Google Play Store submission process.
+                        </p>
+                        <ul>
+                            <li>Play Store listing setup</li>
+                            <li>Android-specific optimizations</li>
+                            <li>Release management</li>
+                            <li>Content rating compliance</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3>Continuous Deployment</h3>
+                        <p>We set up systems for seamless updates and maintenance after the initial launch of your app.
+                        </p>
+                        <ul>
+                            <li>CI/CD pipeline setup</li>
+                            <li>Version management</li>
+                            <li>Update strategy planning</li>
+                            <li>Rollback procedures</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card service-outcome">
+                    <h3>What You'll Get</h3>
+                    <div class="outcome-list">
+                        <div class="outcome-item">
+                            <i class="fas fa-store"></i>
+                            <p>Published app in stores</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <p>Analytics integration</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-bell"></i>
+                            <p>Crash reporting setup</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-sync"></i>
+                            <p>Update management system</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pentest" class="pentest-section">
+            <h2>Application Security & Penetration Testing</h2>
+            <div class="pentest-container">
+                <div class="glass-card pentest-intro">
+                    <h3>Why Security Matters</h3>
+                    <p>In today's digital landscape, security isn't optional—it's essential. A single vulnerability can
+                        lead to data breaches, compromised user information, and irreparable damage to your brand's
+                        reputation.</p>
+                    <p>Our comprehensive penetration testing services help identify and address security weaknesses
+                        before malicious actors can exploit them.</p>
+                </div>
+
+                <div class="pentest-services">
+                    <div class="glass-card pentest-service">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile App Testing</h3>
+                        <ul>
+                            <li>Code-level security review</li>
+                            <li>Data storage vulnerabilities</li>
+                            <li>Authentication bypass testing</li>
+                            <li>API security assessment</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card pentest-service">
+                        <div class="service-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Web Application Testing</h3>
+                        <ul>
+                            <li>OWASP Top 10 vulnerability assessment</li>
+                            <li>Cross-site scripting (XSS) detection</li>
+                            <li>SQL injection testing</li>
+                            <li>Session management flaws</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card pentest-service">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>API Security Testing</h3>
+                        <ul>
+                            <li>Authentication/authorization flaws</li>
+                            <li>Data validation vulnerabilities</li>
+                            <li>Rate limiting assessment</li>
+                            <li>Sensitive data exposure testing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card pentest-methodology">
+                    <h3>Our Methodology</h3>
+                    <div class="methodology-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Reconnaissance</h4>
+                                <p>Gathering information about the target application to understand its architecture and
+                                    potential entry points.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Vulnerability Analysis</h4>
+                                <p>Identifying security weaknesses through manual and automated testing techniques.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Exploitation</h4>
+                                <p>Safely attempting to exploit identified vulnerabilities to confirm their presence and
+                                    impact.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Reporting</h4>
+                                <p>Detailed documentation of findings with clear remediation steps and prioritization.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Remediation Support</h4>
+                                <p>Assistance in addressing identified vulnerabilities and verification of fixes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="glass-card about-content">
+                <h2>About Me</h2>
+                <p>I am [Your Name], an app developer specializing in turning ideas into real-world applications.</p>
+                <p>With expertise in Flutter for beautiful cross-platform apps and FastAPI for powerful backends, I
+                    create seamless digital experiences that bring your vision to reality.</p>
+                <p>I am also a certified security professional with expertise in penetration testing. I ensure your
+                    applications are not only functional and beautiful but also secure against common and advanced
+                    threats.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Let's Connect</h2>
+            <div class="contact-container">
+                <div class="glass-card contact-info">
+                    <p>Get in touch with me directly using one of the methods below:</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <p>ideato.app.official@gmail.com</p>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <p>+201094002768</p>
+                        </div>
+                    </div>
+
+                    <div class="social-media">
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="https://facebook.com/YourPage" target="_blank" class="social-icon facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://twitter.com/YourHandle" target="_blank" class="social-icon twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://instagram.com/YourProfile" target="_blank" class="social-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/YourProfile" target="_blank" class="social-icon linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/YourProfile" target="_blank" class="social-icon github">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="floating-buttons">
+        <a href="https://wa.me/201094002768" class="float-btn whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://m.me/YourFacebookPageID" class="float-btn messenger-btn" target="_blank">
+            <i class="fab fa-facebook-messenger"></i>
+        </a>
+        <a href="https://protoflo.com" class="float-btn protoflo-btn" target="_blank">
+            <i class="fas fa-comment-dots"></i>
+        </a>
+    </div>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="img/logo.png" alt="Ideato App Logo" class="footer-logo-img">
+            </div>
+            <p data-lang="footer-text">&copy; 2023 Ideato App Development. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

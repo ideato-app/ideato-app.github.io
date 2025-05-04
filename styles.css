@@ -140,6 +140,12 @@ p {
     box-shadow: 0 15px 35px var(--glass-shadow);
 }
 
+/* Disable the transform on service cards since we handle that on the parent link */
+.service-link .glass-card:hover {
+    transform: none;
+    box-shadow: 0 15px 35px var(--glass-shadow);
+}
+
 /* Navigation */
 .glass-nav {
     display: flex;
@@ -353,23 +359,40 @@ p {
 
 .services-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-link {
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.service-link:hover {
+    transform: translateY(-10px);
 }
 
 .service-card {
-    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
 }
 
 .service-icon {
     font-size: 2.5rem;
-    color: var(--primary-color);
     margin-bottom: 1.5rem;
+    color: var(--primary-color);
 }
 
 .service-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 /* About Section */

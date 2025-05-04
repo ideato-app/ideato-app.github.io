@@ -146,6 +146,26 @@ document.addEventListener('DOMContentLoaded', function () {
     // Trigger once on load
     revealOnScroll();
 
+    // Scroll to top button functionality
+    const scrollTopButton = document.getElementById('scrollTop');
+
+    // Show/hide scroll to top button
+    window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 300) { // Show button after scrolling 300px
+            scrollTopButton.classList.add('visible');
+        } else {
+            scrollTopButton.classList.remove('visible');
+        }
+    });
+
+    // Scroll to top when button is clicked
+    scrollTopButton.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
     // Localization functionality
     const translations = {
         en: {

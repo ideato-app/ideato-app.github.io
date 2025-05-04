@@ -144,6 +144,131 @@ p {
 .service-link .glass-card:hover {
     transform: none;
     box-shadow: 0 15px 35px var(--glass-shadow);
+    background: linear-gradient(135deg,
+            var(--glass-bg),
+            rgba(255, 255, 255, 0.25));
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark-theme .service-link .glass-card:hover {
+    background: linear-gradient(135deg,
+            var(--glass-bg),
+            rgba(70, 70, 70, 0.4));
+    border-color: rgba(120, 120, 120, 0.4);
+}
+
+/* Service Link Animation */
+.service-link {
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1;
+}
+
+.service-link:hover {
+    transform: translateY(-10px);
+}
+
+.service-link:hover .service-icon {
+    transform: scale(1.15);
+    color: var(--primary-color);
+}
+
+.service-link:hover h3 {
+    color: var(--primary-color);
+}
+
+/* Service Card Enhancement */
+.service-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* Hero Section Enhancement */
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 6s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Improved button hover effects */
+.connect-button {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 0.95rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.connect-button:hover {
+    background: rgba(108, 99, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.connect-button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    transition: 0.5s;
+}
+
+.connect-button:hover:after {
+    left: 100%;
 }
 
 /* Navigation */
@@ -220,9 +345,10 @@ p {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     position: relative;
     font-size: 0.95rem;
+    padding: 5px 0;
 }
 
 .nav-links a:hover {
@@ -232,12 +358,13 @@ p {
 .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -2px;
     right: 0;
     width: 0;
     height: 2px;
     background: var(--primary-color);
-    transition: var(--transition);
+    transition: width 0.3s ease;
+    border-radius: 2px;
 }
 
 .ltr .nav-links a::after {
@@ -287,14 +414,6 @@ p {
     max-width: 800px;
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
@@ -325,26 +444,6 @@ p {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.connect-button {
-    background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    padding: 0.95rem 2rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 50px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: var(--transition);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.connect-button:hover {
-    background: rgba(108, 99, 255, 0.1);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
 /* Services Section */
 .services-section {
     padding: 6rem 5%;
@@ -362,37 +461,6 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
-}
-
-.service-link {
-    text-decoration: none;
-    color: var(--text-color);
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.service-link:hover {
-    transform: translateY(-10px);
-}
-
-.service-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-}
-
-.service-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-}
-
-.service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
 }
 
 /* About Section */
@@ -700,7 +768,7 @@ p {
     color: var(--security-color);
 }
 
-/* Detailed Service Sections */
+/* Detailed Service Sections Enhancement */
 .detailed-service-section {
     padding: 6rem 5%;
     text-align: center;
@@ -709,6 +777,20 @@ p {
 .detailed-service-section h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.detailed-service-section h2:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: currentColor;
+    border-radius: 3px;
 }
 
 #idea-analysis h2 {
@@ -736,6 +818,7 @@ p {
 .service-intro {
     max-width: 900px;
     margin: 0 auto;
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
 .service-intro h3 {
@@ -768,23 +851,40 @@ p {
     max-width: 1200px;
 }
 
+/* Detail Card Enhancement */
 .detail-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px var(--glass-shadow);
 }
 
 .detail-card h3 {
     font-size: 1.5rem;
     margin: 1rem 0;
     text-align: center;
+    transition: color 0.3s ease;
+}
+
+.detail-card:hover h3 {
+    color: currentColor;
 }
 
 .detail-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.detail-card:hover .detail-icon {
+    transform: scale(1.15);
 }
 
 #idea-analysis .detail-icon {
@@ -847,16 +947,27 @@ p {
     gap: 1.5rem;
 }
 
+/* Service Outcome Enhancement */
 .outcome-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.outcome-item:hover {
+    transform: translateY(-5px);
 }
 
 .outcome-item i {
     font-size: 2rem;
     margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.outcome-item:hover i {
+    transform: scale(1.15);
 }
 
 #idea-analysis .outcome-item i {
@@ -877,6 +988,56 @@ p {
 
 .outcome-item p {
     font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 45px;
+    height: 45px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 99;
+    transform: translateY(20px);
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.rtl .scroll-top {
+    left: auto;
+    right: 2rem;
 }
 
 /* Responsive Design */

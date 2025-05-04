@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خدمات تطوير التطبيقات</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
@@ -33,13 +34,25 @@
                 <li><a href="#deployment" data-lang="nav-deploy">Deployment</a></li>
                 <li><a href="#pentest" data-lang="nav-security">Security</a></li>
                 <li><a href="#about" data-lang="nav-about">About</a></li>
-                <li><a href="#contact" data-lang="nav-contact">Contact</a></li>
+                <!-- <li><a href="#contact" data-lang="nav-contact">Contact</a></li> -->
+                <li class="mobile-only"><a href="#contact" class="nav-connect-mobile" data-lang="nav-connect">Connect
+                        with Us</a></li>
             </ul>
             <div class="nav-right">
                 <a href="#contact" class="nav-connect-btn">Connect with Us</a>
                 <div class="language-switcher">
                     <button id="lang-ar" class="lang-btn active">AR</button>
                     <button id="lang-en" class="lang-btn">EN</button>
+                </div>
+                <div class="theme-switcher">
+                    <span class="theme-text" data-lang="theme-light">Light</span>
+                    <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+                    <label for="theme-toggle" class="theme-toggle-label">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                        <span class="theme-toggle-ball"></span>
+                    </label>
+                    <span class="theme-text" data-lang="theme-dark">Dark</span>
                 </div>
                 <div class="menu-toggle">
                     <i class="fas fa-bars"></i>
@@ -527,7 +540,7 @@
         <section id="about" class="about-section">
             <div class="glass-card about-content">
                 <h2>About Me</h2>
-                <p>I am [Your Name], an app developer specializing in turning ideas into real-world applications.</p>
+                <p>I am Idea To App, an app developer specializing in turning ideas into real-world applications.</p>
                 <p>With expertise in Flutter for beautiful cross-platform apps and FastAPI for powerful backends, I
                     create seamless digital experiences that bring your vision to reality.</p>
                 <p>I am also a certified security professional with expertise in penetration testing. I ensure your
@@ -544,30 +557,39 @@
                     <div class="contact-methods">
                         <div class="contact-method">
                             <i class="fas fa-envelope"></i>
-                            <p>ideato.app.official@gmail.com</p>
+                            <a href="mailto:ideato.app.official@gmail.com" class="contact-button">
+                                <span>ideato.app.official@gmail.com</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                         <div class="contact-method">
                             <i class="fas fa-phone"></i>
-                            <p>+201094002768</p>
+                            <a href="tel:+201104532940" class="contact-button">
+                                <span>01104532940</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
 
                     <div class="social-media">
                         <h3>Follow Us</h3>
                         <div class="social-icons">
-                            <a href="https://facebook.com/YourPage" target="_blank" class="social-icon facebook">
+                            <a href="https://www.facebook.com/ideato.app.official" target="_blank"
+                                class="social-icon facebook">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://twitter.com/YourHandle" target="_blank" class="social-icon twitter">
+                            <a href="https://x.com/ideato_app" target="_blank" class="social-icon twitter">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="https://instagram.com/YourProfile" target="_blank" class="social-icon instagram">
+                            <a href="https://www.instagram.com/ideato.app/" target="_blank"
+                                class="social-icon instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://linkedin.com/in/YourProfile" target="_blank" class="social-icon linkedin">
+                            <a href="https://www.linkedin.com/in/ideato-app" target="_blank"
+                                class="social-icon linkedin">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://github.com/YourProfile" target="_blank" class="social-icon github">
+                            <a href="https://github.com/ideato-app" target="_blank" class="social-icon github">
                                 <i class="fab fa-github"></i>
                             </a>
                         </div>
@@ -581,7 +603,7 @@
         <a href="https://wa.me/201094002768" class="float-btn whatsapp-btn" target="_blank">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="https://m.me/YourFacebookPageID" class="float-btn messenger-btn" target="_blank">
+        <a href="https://m.me/ideato.app.official" class="float-btn messenger-btn" target="_blank">
             <i class="fab fa-facebook-messenger"></i>
         </a>
         <a href="https://protoflo.com" class="float-btn protoflo-btn" target="_blank">
@@ -594,7 +616,7 @@
             <div class="footer-logo">
                 <img src="img/logo.png" alt="Ideato App Logo" class="footer-logo-img">
             </div>
-            <p data-lang="footer-text">&copy; 2023 Ideato App Development. All rights reserved.</p>
+            <p data-lang="footer-text">&copy; 2025 Ideato App Development. All rights reserved.</p>
         </div>
     </footer>
 

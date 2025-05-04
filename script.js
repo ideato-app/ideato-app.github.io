@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Mobile navigation toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
+    const body = document.body;
 
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function () {
@@ -12,26 +13,101 @@ document.addEventListener('DOMContentLoaded', function () {
             if (icon.classList.contains('fa-bars')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
+                // Prevent scrolling when menu is open
+                body.style.overflow = 'hidden';
             } else {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+                // Allow scrolling when menu is closed
+                body.style.overflow = '';
             }
         });
     }
 
+    // Theme toggling functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const themeLightText = document.querySelector('.theme-text:first-of-type');
+    const themeDarkText = document.querySelector('.theme-text:last-of-type');
+
+    // Check for saved theme preference or use device preference
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme.matches)) {
+        body.classList.add('dark-theme');
+        themeToggle.checked = true;
+    }
+
+    // Function to set the theme
+    function setTheme(isDark) {
+        if (isDark) {
+            body.classList.add('dark-theme');
+            themeToggle.checked = true;
+            localStorage.setItem('theme', 'dark');
+        } else {
+            body.classList.remove('dark-theme');
+            themeToggle.checked = false;
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    // Toggle theme when checkbox changes
+    themeToggle.addEventListener('change', function () {
+        setTheme(this.checked);
+    });
+
+    // Toggle theme when text labels are clicked
+    if (themeLightText) {
+        themeLightText.addEventListener('click', function () {
+            setTheme(false);
+        });
+    }
+
+    if (themeDarkText) {
+        themeDarkText.addEventListener('click', function () {
+            setTheme(true);
+        });
+    }
+
+    // Update theme when system preference changes
+    prefersDarkScheme.addEventListener('change', function (e) {
+        if (!localStorage.getItem('theme')) {
+            setTheme(e.matches);
+        }
+    });
+
     // Close menu when clicking a nav link on mobile
-    const navItems = document.querySelectorAll('.nav-links a, .nav-connect-btn');
+    const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(item => {
         item.addEventListener('click', function () {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
                 const icon = menuToggle.querySelector('i');
                 if (icon) {
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
+                // Allow scrolling again
+                body.style.overflow = '';
             }
         });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function (event) {
+        if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+            // Check if click is outside the navigation
+            if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+                // Allow scrolling again
+                body.style.overflow = '';
+            }
+        }
     });
 
     // Add scroll animation for sections
@@ -85,6 +161,10 @@ document.addEventListener('DOMContentLoaded', function () {
             'nav-contact': 'Contact',
             'nav-connect': 'Connect with Us',
 
+            // Theme toggle
+            'theme-light': 'Light',
+            'theme-dark': 'Dark',
+
             // Hero section
             'hero-title': 'Turn Your Idea into a Real App',
             'hero-subtitle': 'We help you bring your ideas to life using Flutter and FastAPI.',
@@ -114,19 +194,19 @@ document.addEventListener('DOMContentLoaded', function () {
             'uiux-intro-desc': 'The success of your app depends heavily on how users interact with it. Our UI/UX design process focuses on creating intuitive, engaging, and visually appealing interfaces that enhance user satisfaction and drive retention.',
 
             // Development Section
-            'dev-title': 'App Development',
-            'dev-intro-title': 'Bring Your Vision to Life',
-            'dev-intro-desc': 'Our development team specializes in creating high-performance, cross-platform applications using Flutter for frontend and FastAPI for backend services. This combination ensures rapid development, beautiful interfaces, and robust, scalable backend systems.',
+            'dev-title': 'Development',
+            'dev-intro-title': 'Bringing Your Vision to Life',
+            'dev-intro-desc': 'Our development team specializes in building high-performance, cross-platform apps using Flutter for the frontend and FastAPI for the backend. This approach ensures fast development with outstanding user interfaces and flexible, scalable backend systems.',
 
             // Deployment Section
-            'deploy-title': 'App Deployment',
-            'deploy-intro-title': 'From Development to Your Users\' Hands',
-            'deploy-intro-desc': 'Getting your app to market involves navigating complex submission processes, optimizing for different platforms, and ensuring everything complies with store guidelines. We handle the entire deployment process so you can focus on growing your user base.',
+            'deploy-title': 'App Deployment & Launch',
+            'deploy-intro-title': 'From Development to User\'s Hands',
+            'deploy-intro-desc': 'Launching your app in the market involves dealing with complex submission processes, platform compatibility, and ensuring compliance with store guidelines. We handle the entire deployment process so you can focus on growing your user base.',
 
             // Security Section
-            'security-title': 'Application Security & Penetration Testing',
-            'security-intro-title': 'Why Security Matters',
-            'security-intro-desc': 'In today\'s digital landscape, security isn\'t optional—it\'s essential. A single vulnerability can lead to data breaches, compromised user information, and irreparable damage to your brand\'s reputation.',
+            'security-title': 'App Security & Penetration Testing',
+            'security-intro-title': 'The Importance of Cybersecurity',
+            'security-intro-desc': 'In today\'s digital landscape, security is not an option, it\'s a necessity. A single security vulnerability can lead to data breaches, user information compromise, and irreparable damage to your brand reputation.',
 
             // About Section
             'about-title': 'About Me',
@@ -137,74 +217,398 @@ document.addEventListener('DOMContentLoaded', function () {
             'follow-us': 'Follow Us',
 
             // Footer
-            'footer-text': '© 2023 Ideato App Development. All rights reserved.'
+            'footer-text': '© 2023 Ideato App Development. All rights reserved.',
+
+            // Common elements
+            'outcome-title': 'What You\'ll Get',
+
+            // Idea Analysis cards
+            'market-research-title': 'Market Research',
+            'market-research-desc': 'We conduct thorough market research to identify your target audience, analyze competitors, and determine market gaps that your app can fill.',
+            'user-interviews-title': 'User Interviews',
+            'user-interviews-desc': 'We engage with potential users to gather insights, understand pain points, and validate whether your solution addresses real needs.',
+            'feasibility-title': 'Feasibility Study',
+            'feasibility-desc': 'We assess the technical, financial, and operational feasibility of your idea to ensure that it can be successfully implemented.',
+
+            // UI/UX cards
+            'user-research-title': 'User Research',
+            'user-research-desc': 'We start by understanding your users\' needs, motivations, and behaviors to create experiences that resonate with them.',
+            'info-arch-title': 'Information Architecture',
+            'info-arch-desc': 'We organize content and functionality in a way that\'s intuitive and accessible to users, creating a solid foundation for your app.',
+            'visual-design-title': 'Visual Design',
+            'visual-design-desc': 'We create visually stunning interfaces that align with your brand identity and enhance user engagement.',
+
+            // Development cards
+            'frontend-title': 'Frontend Development',
+            'frontend-desc': 'We use Flutter to create responsive interfaces that perform efficiently across iOS, Android, and web platforms.',
+            'backend-title': 'Backend Development',
+            'backend-desc': 'We build powerful, scalable backend systems using FastAPI to provide the underlying infrastructure for your app\'s functionality.',
+            'qa-title': 'Quality Assurance',
+            'qa-desc': 'We implement rigorous testing methodologies to ensure your app is free of bugs and meets the expected performance.',
+
+            // Deployment cards
+            'app-store-title': 'App Store Deployment',
+            'app-store-desc': 'We prepare and submit your app to the Apple App Store, ensuring compliance with all criteria and requirements.',
+            'play-store-title': 'Google Play Store Deployment',
+            'play-store-desc': 'We optimize your app for the Android platform and handle all the deployment procedures in the Google Play Store.',
+            'cicd-title': 'Continuous Deployment for Updates',
+            'cicd-desc': 'We set up CI/CD systems for smooth, ongoing updates and maintenance after your app\'s initial launch.',
+
+            // Security section
+            'mobile-testing-title': 'Mobile App Security Testing',
+            'web-testing-title': 'Web App Security Testing',
+            'api-testing-title': 'API Security Testing',
+            'methodology-title': 'Our Security Testing Methodology',
+            'step-1-title': 'Information Gathering',
+            'step-1-desc': 'Gathering data about the target application to understand its structural layout and potential entry points.',
+            'step-2-title': 'Vulnerability Analysis',
+            'step-2-desc': 'Identifying security vulnerabilities using manual and advanced automated techniques.',
+            'step-3-title': 'Penetration Testing',
+            'step-3-desc': 'Attempting to exploit discovered vulnerabilities in a safe manner to confirm their existence and assess their potential impact.',
+            'step-4-title': 'Detailed Reporting',
+            'step-4-desc': 'Comprehensive documentation of results with clear steps for remediation and prioritization of fixes.',
+            'step-5-title': 'Remediation Support',
+            'step-5-desc': 'Assisting in remediating discovered vulnerabilities and verifying the effectiveness of applied fixes.',
+
+            // About paragraphs
+            'about-para-1': 'I am Idea To App, an app developer specializing in turning ideas into real-world applications.',
+            'about-para-2': 'With expertise in Flutter for beautiful cross-platform apps and FastAPI for powerful backends, I create seamless digital experiences that bring your vision to reality.',
+            'about-para-3': 'I am also a certified security professional with expertise in penetration testing. I ensure your applications are not only functional and beautiful but also secure against common and advanced threats.',
+
+            // List items for Idea Analysis section
+            'market-list-1': 'Competitor analysis',
+            'market-list-2': 'Target audience identification',
+            'market-list-3': 'Market trends evaluation',
+            'market-list-4': 'SWOT analysis',
+
+            'user-interviews-list-1': 'Focus group discussions',
+            'user-interviews-list-2': 'One-on-one interviews',
+            'user-interviews-list-3': 'User surveys',
+            'user-interviews-list-4': 'Feedback analysis',
+
+            'feasibility-list-1': 'Technical feasibility assessment',
+            'feasibility-list-2': 'Cost-benefit analysis',
+            'feasibility-list-3': 'Resource requirements',
+            'feasibility-list-4': 'Timeline estimation',
+
+            // Outcome items for Idea Analysis
+            'idea-outcome-1': 'Comprehensive validation report',
+            'idea-outcome-2': 'Refined product vision',
+            'idea-outcome-3': 'Prioritized feature list',
+            'idea-outcome-4': 'Strategic roadmap',
+
+            // List items for UI/UX section
+            'user-research-list-1': 'User personas development',
+            'user-research-list-2': 'Journey mapping',
+            'user-research-list-3': 'Behavioral analysis',
+            'user-research-list-4': 'Usability testing',
+
+            'info-arch-list-1': 'Content structure',
+            'info-arch-list-2': 'User flow diagrams',
+            'info-arch-list-3': 'Wireframing',
+            'info-arch-list-4': 'Navigation patterns',
+
+            'visual-design-list-1': 'Brand-aligned UI elements',
+            'visual-design-list-2': 'Color scheme development',
+            'visual-design-list-3': 'Typography selection',
+            'visual-design-list-4': 'Custom iconography',
+
+            // Outcome items for UI/UX
+            'uiux-outcome-1': 'Information architecture map',
+            'uiux-outcome-2': 'Interactive prototypes',
+            'uiux-outcome-3': 'UI style guide',
+            'uiux-outcome-4': 'Export-ready design assets',
+
+            // List items for Development section
+            'frontend-list-1': 'Cross-platform compatibility',
+            'frontend-list-2': 'Custom animations',
+            'frontend-list-3': 'Responsive layouts',
+            'frontend-list-4': 'Performance optimization',
+
+            'backend-list-1': 'RESTful API development',
+            'backend-list-2': 'Database design and structure',
+            'backend-list-3': 'Authentication and authorization systems',
+            'backend-list-4': 'Third-party service integrations',
+
+            'qa-list-1': 'Automated testing',
+            'qa-list-2': 'Performance testing',
+            'qa-list-3': 'Cross-device compatibility testing',
+            'qa-list-4': 'Regression testing',
+
+            // Outcome items for Development
+            'dev-outcome-1': 'Clean, documented source code',
+            'dev-outcome-2': 'Scalable backend architecture',
+            'dev-outcome-3': 'Thoroughly tested application',
+            'dev-outcome-4': 'Complete technical documentation',
+
+            // List items for Deployment section
+            'app-store-list-1': 'App Store listing preparation',
+            'app-store-list-2': 'Screenshots and preview videos',
+            'app-store-list-3': 'Metadata optimization',
+            'app-store-list-4': 'Guidelines compliance verification',
+
+            'play-store-list-1': 'Google Play Store listing setup',
+            'play-store-list-2': 'Android-specific optimizations',
+            'play-store-list-3': 'App version management',
+            'play-store-list-4': 'Content rating compliance',
+
+            'cicd-list-1': 'CI/CD pipeline setup',
+            'cicd-list-2': 'Version and release management',
+            'cicd-list-3': 'Future updates strategy planning',
+            'cicd-list-4': 'Rollback procedures development',
+
+            // Outcome items for Deployment
+            'deploy-outcome-1': 'App published in official stores',
+            'deploy-outcome-2': 'Analytics platforms integration',
+            'deploy-outcome-3': 'Crash reporting system setup',
+            'deploy-outcome-4': 'Integrated updates management system',
+
+            // List items for Security section
+            'mobile-testing-list-1': 'Code-level security review',
+            'mobile-testing-list-2': 'Data storage vulnerabilities',
+            'mobile-testing-list-3': 'Authentication bypass testing',
+            'mobile-testing-list-4': 'API security assessment',
+
+            'web-testing-list-1': 'OWASP Top 10 vulnerabilities evaluation',
+            'web-testing-list-2': 'Cross-site scripting (XSS) detection',
+            'web-testing-list-3': 'SQL injection testing',
+            'web-testing-list-4': 'Session management flaws',
+
+            'api-testing-list-1': 'Authentication/authorization vulnerabilities',
+            'api-testing-list-2': 'Data validation vulnerabilities',
+            'api-testing-list-3': 'Rate limiting assessment',
+            'api-testing-list-4': 'Sensitive data exposure testing'
         },
         ar: {
             // Navigation
             'nav-home': 'الرئيسية',
-            'nav-services': 'خدماتنا',
+            'nav-services': 'الخدمات',
             'nav-idea': 'تحليل الأفكار',
-            'nav-uiux': 'تصميم الواجهة',
-            'nav-dev': 'تطوير التطبيقات',
-            'nav-deploy': 'نشر التطبيقات',
+            'nav-uiux': ' UI/UX',
+            'nav-dev': 'التطوير',
+            'nav-deploy': 'النشر',
             'nav-security': 'الحماية',
-            'nav-about': 'عننا',
-            'nav-contact': 'اتصل بينا',
-            'nav-connect': 'تواصل معانا',
+            'nav-about': 'من نحن',
+            'nav-contact': 'اتصل بنا',
+            'nav-connect': 'تواصل معنا',
+
+            // Theme toggle
+            'theme-light': 'وضع النهار',
+            'theme-dark': 'وضع الليل',
 
             // Hero section
-            'hero-title': 'حول فكرتك لتطبيق حقيقي',
-            'hero-subtitle': 'هنساعدك تحول أفكارك لواقع باستخدام Flutter و FastAPI.',
-            'hero-connect': 'تواصل معانا',
+            'hero-title': 'حوّل فكرتك إلى تطبيق واقعي',
+            'hero-subtitle': 'نساعدك في تحويل أفكارك إلى منتجات رقمية باستخدام Flutter و FastAPI.',
+            'hero-connect': 'تواصل معنا',
 
             // Services section
             'services-title': 'خدماتنا',
             'idea-service': 'تحليل وتقييم الفكرة',
-            'idea-desc': 'هنساعدك تطور فكرتك ونتأكد إنها تنفع في السوق.',
-            'uiux-service': 'تصميم واجهة المستخدم',
-            'uiux-desc': 'واجهات حلوة وسهلة الاستخدام بيحبها المستخدمين.',
+            'idea-desc': 'نساعدك في تطوير المفهوم والتحقق من إمكانية التسويق.',
+            'uiux-service': 'تصميم واجهات المستخدم UI/UX',
+            'uiux-desc': 'واجهات مستخدم جذابة وبديهية تحقق تجربة مستخدم متميزة.',
             'dev-service': 'تطوير التطبيقات',
-            'dev-desc': 'تطوير لكل الأجهزة مع Flutter وأنظمة خلفية قوية مع FastAPI.',
+            'dev-desc': 'تطوير متعدد المنصات باستخدام Flutter وخدمات خلفية قوية بواسطة FastAPI.',
             'deploy-service': 'نشر التطبيقات',
-            'deploy-desc': 'هنتعامل مع كل خطوات النشر في متاجر التطبيقات.',
-            'security-service': 'اختبار الاختراق',
-            'security-desc': 'فحص أمني شامل لاكتشاف الثغرات في تطبيقك قبل ما الهاكرز يلاقوها.',
+            'deploy-desc': 'نتولى عملية النشر الكاملة في متاجر التطبيقات المختلفة.',
+            'security-service': 'اختبار الاختراق الأمني',
+            'security-desc': 'تقييم أمني شامل لاكتشاف الثغرات في تطبيقك قبل استغلالها من قبل المخترقين.',
 
             // Idea Analysis Section
             'idea-title': 'تحليل وتقييم الفكرة',
-            'idea-intro-title': 'حول مفهومك لمنتج قابل للتطبيق',
-            'idea-intro-desc': 'التطبيقات الرائعة تبدأ بأفكار عظيمة، لكن مش كل الأفكار بتتحول لمنتجات ناجحة. خدمة تحليل وتقييم الفكرة بتساعدك تحسن مفهومك، وتحدد السوق المستهدف، وتتحقق من افتراضاتك قبل الاستثمار في التطوير الكامل.',
+            'idea-intro-title': 'تحويل مفهومك إلى منتج قابل للتطبيق',
+            'idea-intro-desc': 'التطبيقات الناجحة تبدأ بأفكار مبتكرة، لكن ليست كل الأفكار تترجم إلى منتجات فعالة. خدمة تحليل وتقييم الفكرة لدينا تساعدك في صقل مفهومك، وتحديد السوق المستهدف، والتحقق من فرضياتك قبل الاستثمار في التطوير الشامل.',
 
             // UI/UX Section
-            'uiux-title': 'تصميم واجهة المستخدم',
-            'uiux-intro-title': 'إنشاء تجارب مستخدم ممتعة',
-            'uiux-intro-desc': 'نجاح تطبيقك يعتمد بشكل كبير على تفاعل المستخدمين معاه. عملية تصميم واجهة المستخدم بتركز على إنشاء واجهات بديهية وجذابة وجميلة بصريًا بتعزز رضا المستخدم وتزيد من اهتمامه.',
+            'uiux-title': 'تصميم واجهات وتجربة المستخدم',
+            'uiux-intro-title': 'تصميم تجارب مستخدم استثنائية',
+            'uiux-intro-desc': 'نجاح تطبيقك يعتمد بشكل أساسي على كيفية تفاعل المستخدمين معه. عملية تصميم واجهات وتجربة المستخدم لدينا تركز على إنشاء واجهات بديهية وتفاعلية وجذابة بصريًا تعزز رضا المستخدم وتزيد من معدلات الاحتفاظ.',
 
             // Development Section
             'dev-title': 'تطوير التطبيقات',
-            'dev-intro-title': 'حول رؤيتك لواقع',
-            'dev-intro-desc': 'فريق التطوير لدينا متخصص في إنشاء تطبيقات عالية الأداء ومتعددة المنصات باستخدام Flutter للواجهة الأمامية و FastAPI للخدمات الخلفية. هذه التركيبة بتضمن تطوير سريع وواجهات جميلة وأنظمة خلفية قوية وقابلة للتوسع.',
+            'dev-intro-title': 'تحويل رؤيتك إلى واقع رقمي',
+            'dev-intro-desc': 'فريق التطوير لدينا متخصص في إنشاء تطبيقات عالية الأداء متعددة المنصات باستخدام Flutter للواجهة الأمامية و FastAPI للخدمات الخلفية. هذه المنهجية تضمن تطويرًا سريعًا مع واجهات مستخدم متميزة وأنظمة خلفية مرنة وقابلة للتوسع.',
 
             // Deployment Section
-            'deploy-title': 'نشر التطبيقات',
-            'deploy-intro-title': 'من التطوير لأيدي المستخدمين',
-            'deploy-intro-desc': 'وصول تطبيقك للسوق بيتضمن التعامل مع عمليات تقديم معقدة، والتحسين لمنصات مختلفة، والتأكد من التوافق مع إرشادات المتاجر. إحنا بنتعامل مع عملية النشر بالكامل عشان تقدر تركز على زيادة قاعدة المستخدمين.',
+            'deploy-title': 'نشر وإطلاق التطبيقات',
+            'deploy-intro-title': 'من التطوير إلى أيدي المستخدمين',
+            'deploy-intro-desc': 'إطلاق تطبيقك في السوق يتضمن التعامل مع عمليات تقديم معقدة، وتحسين التوافق مع المنصات المختلفة، وضمان الامتثال لإرشادات المتاجر. نتولى عملية النشر بالكامل لتتمكن من التركيز على تنمية قاعدة المستخدمين.',
 
             // Security Section
-            'security-title': 'أمان التطبيقات واختبار الاختراق',
-            'security-intro-title': 'ليه الأمان مهم',
-            'security-intro-desc': 'في العالم الرقمي الحالي، الأمان مش اختياري - ده ضروري. ثغرة واحدة ممكن تؤدي لتسريب البيانات، والمعلومات الشخصية للمستخدمين، وضرر لا يمكن إصلاحه لسمعة علامتك التجارية.',
+            'security-title': 'أمن التطبيقات واختبار الاختراق',
+            'security-intro-title': 'أهمية الأمن السيبراني',
+            'security-intro-desc': 'في البيئة الرقمية الحالية، الأمن ليس خيارًا بل ضرورة حتمية. ثغرة أمنية واحدة قد تؤدي إلى تسريب البيانات، واختراق معلومات المستخدمين، وإلحاق ضرر لا يمكن إصلاحه بسمعة علامتك التجارية.',
 
             // About Section
-            'about-title': 'عننا',
+            'about-title': 'عن الشركة',
 
             // Contact section
-            'contact-title': 'تواصل معانا',
-            'contact-intro': 'تواصل معانا مباشرة باستخدام إحدى الطرق دي:',
+            'contact-title': 'تواصل معنا',
+            'contact-intro': 'تواصل معنا مباشرة باستخدام إحدى الطرق التالية:',
             'follow-us': 'تابعنا',
 
             // Footer
-            'footer-text': '© 2023 آيدياتو لتطوير التطبيقات. كل الحقوق محفوظة.'
+            'footer-text': '© 2023 آيدياتو لتطوير التطبيقات. جميع الحقوق محفوظة.',
+
+            // Common elements
+            'outcome-title': 'ماذا ستحصل عليه',
+
+            // Idea Analysis cards
+            'market-research-title': 'بحوث السوق',
+            'market-research-desc': 'نجري بحوثًا سوقية شاملة لتحديد الجمهور المستهدف، وتحليل المنافسين، وتحديد الفجوات السوقية التي يمكن لتطبيقك تلبيتها.',
+            'user-interviews-title': 'مقابلات المستخدمين',
+            'user-interviews-desc': 'نتواصل مع المستخدمين المحتملين لجمع الرؤى، وفهم نقاط الألم، والتحقق من كون حلك يلبي احتياجات حقيقية.',
+            'feasibility-title': 'دراسة الجدوى',
+            'feasibility-desc': 'نقيّم الجدوى التقنية والمالية والتشغيلية لفكرتك للتأكد من إمكانية تنفيذها بنجاح.',
+
+            // UI/UX cards
+            'user-research-title': 'أبحاث المستخدم',
+            'user-research-desc': 'نبدأ بفهم احتياجات المستخدمين ودوافعهم وسلوكياتهم لإنشاء تجارب تتواصل معهم بفعالية.',
+            'info-arch-title': 'هندسة المعلومات',
+            'info-arch-desc': 'نقوم بتنظيم المحتوى والوظائف بطريقة منطقية وسهلة الاستخدام، مما يوفر أساسًا قويًا لتطبيقك.',
+            'visual-design-title': 'التصميم المرئي',
+            'visual-design-desc': 'نبتكر واجهات مستخدم متميزة بصريًا تتوافق مع هوية علامتك التجارية وتعزز التفاعل مع المستخدم.',
+
+            // Development cards
+            'frontend-title': 'تطوير الواجهة الأمامية',
+            'frontend-desc': 'نستخدم Flutter لإنشاء واجهات مستخدم متجاوبة تعمل بكفاءة عبر منصات iOS وAndroid والويب.',
+            'backend-title': 'تطوير الخدمات الخلفية',
+            'backend-desc': 'نقوم ببناء خدمات خلفية قوية وقابلة للتوسع باستخدام FastAPI لتوفير البنية التحتية اللازمة لوظائف التطبيق.',
+            'qa-title': 'ضمان الجودة',
+            'qa-desc': 'نطبق منهجيات اختبار صارمة لضمان خلو التطبيق من الأخطاء البرمجية وتحقيق الأداء المتوقع.',
+
+            // Deployment cards
+            'app-store-title': 'النشر في متجر آبل',
+            'app-store-desc': 'نقوم بإعداد وتقديم تطبيقك إلى متجر Apple App Store، مع ضمان الامتثال لجميع المعايير والمتطلبات.',
+            'play-store-title': 'النشر في متجر جوجل بلاي',
+            'play-store-desc': 'نقوم بتحسين تطبيقك لنظام Android والتعامل مع كافة إجراءات النشر في Google Play Store.',
+            'cicd-title': 'النشر المستمر للتحديثات',
+            'cicd-desc': 'نقوم بإعداد أنظمة CI/CD للتحديثات السلسة والصيانة المستمرة بعد الإطلاق الأولي لتطبيقك.',
+
+            // Security section
+            'mobile-testing-title': 'اختبار أمن تطبيقات الجوال',
+            'web-testing-title': 'اختبار أمن تطبيقات الويب',
+            'api-testing-title': 'اختبار أمن واجهات برمجة التطبيقات',
+            'methodology-title': 'منهجيتنا في الاختبار الأمني',
+            'step-1-title': 'جمع المعلومات',
+            'step-1-desc': 'جمع البيانات حول التطبيق المستهدف لفهم بنيته الهيكلية ونقاط الدخول المحتملة.',
+            'step-2-title': 'تحليل نقاط الضعف',
+            'step-2-desc': 'تحديد الثغرات الأمنية باستخدام تقنيات الاختبار اليدوية والآلية المتقدمة.',
+            'step-3-title': 'محاكاة الاختراق',
+            'step-3-desc': 'محاولة استغلال الثغرات المكتشفة بطريقة آمنة للتأكد من وجودها وتقييم تأثيرها المحتمل.',
+            'step-4-title': 'إعداد التقارير التفصيلية',
+            'step-4-desc': 'توثيق شامل للنتائج مع خطوات واضحة للمعالجة وتحديد أولويات الإصلاح.',
+            'step-5-title': 'دعم عمليات المعالجة',
+            'step-5-desc': 'المساعدة في معالجة الثغرات المكتشفة والتحقق من فعالية الإصلاحات المطبقة.',
+
+            // About paragraphs
+            'about-para-1': 'نحن "آيديا تو آب"، مطورو تطبيقات متخصصون في تحويل الأفكار المبتكرة إلى تطبيقات رقمية فعالة.',
+            'about-para-2': 'بفضل خبرتنا في Flutter لتطوير تطبيقات متعددة المنصات و FastAPI لبناء خدمات خلفية قوية، نقدم تجارب رقمية متكاملة تجسد رؤيتك على أرض الواقع.',
+            'about-para-3': 'نحن أيضًا متخصصون معتمدون في مجال الأمن السيبراني مع خبرة في اختبار الاختراق. نضمن أن تكون تطبيقاتك ليست فقط وظيفية وجذابة بل أيضًا محمية ضد التهديدات الأمنية الشائعة والمتقدمة.',
+
+            // List items for Idea Analysis section
+            'market-list-1': 'تحليل استراتيجي للمنافسين',
+            'market-list-2': 'تحديد وتقسيم الجمهور المستهدف',
+            'market-list-3': 'تقييم اتجاهات ومؤشرات السوق',
+            'market-list-4': 'تحليل SWOT (القوة، الضعف، الفرص، التهديدات)',
+
+            'user-interviews-list-1': 'جلسات مجموعات التركيز',
+            'user-interviews-list-2': 'مقابلات فردية معمقة',
+            'user-interviews-list-3': 'استبيانات واستطلاعات المستخدمين',
+            'user-interviews-list-4': 'تحليل آراء وملاحظات المستخدمين',
+
+            'feasibility-list-1': 'تقييم الجدوى التقنية والتكنولوجية',
+            'feasibility-list-2': 'تحليل التكلفة مقابل العائد',
+            'feasibility-list-3': 'تحديد متطلبات الموارد البشرية والتقنية',
+            'feasibility-list-4': 'تقدير الإطار الزمني للتنفيذ',
+
+            // Outcome items for Idea Analysis
+            'idea-outcome-1': 'تقرير تحقق شامل للفكرة',
+            'idea-outcome-2': 'رؤية منتجية محسنة ومحددة',
+            'idea-outcome-3': 'قائمة مميزات مرتبة حسب الأولوية',
+            'idea-outcome-4': 'خارطة طريق استراتيجية للتنفيذ',
+
+            // List items for UI/UX section
+            'user-research-list-1': 'تطوير نماذج شخصيات المستخدمين',
+            'user-research-list-2': 'رسم خرائط رحلة المستخدم',
+            'user-research-list-3': 'تحليل السلوك والتفاعلات',
+            'user-research-list-4': 'اختبارات قابلية الاستخدام',
+
+            'info-arch-list-1': 'هيكلة المحتوى الرقمي',
+            'info-arch-list-2': 'تصميم مخططات تدفق المستخدم',
+            'info-arch-list-3': 'إنشاء النماذج الأولية السلكية',
+            'info-arch-list-4': 'تصميم أنماط التنقل والتفاعل',
+
+            'visual-design-list-1': 'تصميم واجهات متوافقة مع الهوية البصرية',
+            'visual-design-list-2': 'تطوير نظام ألوان متناسق',
+            'visual-design-list-3': 'اختيار وتدرج الخطوط',
+            'visual-design-list-4': 'تصميم رموز وأيقونات مخصصة',
+
+            // Outcome items for UI/UX
+            'uiux-outcome-1': 'خريطة هيكلية للمعلومات',
+            'uiux-outcome-2': 'نماذج تفاعلية قابلة للاختبار',
+            'uiux-outcome-3': 'دليل أسلوب تصميم واجهة المستخدم',
+            'uiux-outcome-4': 'أصول تصميمية جاهزة للتنفيذ',
+
+            // List items for Development section
+            'frontend-list-1': 'Cross-platform compatibility',
+            'frontend-list-2': 'Custom animations',
+            'frontend-list-3': 'Responsive layouts',
+            'frontend-list-4': 'Performance optimization',
+
+            'backend-list-1': 'RESTful API development',
+            'backend-list-2': 'Database design and structure',
+            'backend-list-3': 'Authentication and authorization systems',
+            'backend-list-4': 'Third-party service integrations',
+
+            'qa-list-1': 'Automated testing',
+            'qa-list-2': 'Performance testing',
+            'qa-list-3': 'Cross-device compatibility testing',
+            'qa-list-4': 'Regression testing',
+
+            // Outcome items for Development
+            'dev-outcome-1': 'Clean, documented source code',
+            'dev-outcome-2': 'Scalable backend architecture',
+            'dev-outcome-3': 'Thoroughly tested application',
+            'dev-outcome-4': 'Complete technical documentation',
+
+            // List items for Deployment section
+            'app-store-list-1': 'App Store listing preparation',
+            'app-store-list-2': 'Screenshots and preview videos',
+            'app-store-list-3': 'Metadata optimization',
+            'app-store-list-4': 'Guidelines compliance verification',
+
+            'play-store-list-1': 'Google Play Store listing setup',
+            'play-store-list-2': 'Android-specific optimizations',
+            'play-store-list-3': 'App version management',
+            'play-store-list-4': 'Content rating compliance',
+
+            'cicd-list-1': 'CI/CD pipeline setup',
+            'cicd-list-2': 'Version and release management',
+            'cicd-list-3': 'Future updates strategy planning',
+            'cicd-list-4': 'Rollback procedures development',
+
+            // Outcome items for Deployment
+            'deploy-outcome-1': 'App published in official stores',
+            'deploy-outcome-2': 'Analytics platforms integration',
+            'deploy-outcome-3': 'Crash reporting system setup',
+            'deploy-outcome-4': 'Integrated updates management system',
+
+            // List items for Security section
+            'mobile-testing-list-1': 'Code-level security review',
+            'mobile-testing-list-2': 'Data storage vulnerabilities',
+            'mobile-testing-list-3': 'Authentication bypass testing',
+            'mobile-testing-list-4': 'API security assessment',
+
+            'web-testing-list-1': 'OWASP Top 10 vulnerabilities evaluation',
+            'web-testing-list-2': 'Cross-site scripting (XSS) detection',
+            'web-testing-list-3': 'SQL injection testing',
+            'web-testing-list-4': 'Session management flaws',
+
+            'api-testing-list-1': 'Authentication/authorization vulnerabilities',
+            'api-testing-list-2': 'Data validation vulnerabilities',
+            'api-testing-list-3': 'Rate limiting assessment',
+            'api-testing-list-4': 'Sensitive data exposure testing'
         }
     };
 
@@ -212,7 +616,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function addLangAttributes() {
         try {
             // Navigation items - handle the actual visible links only (not commented out ones)
-            const navLinks = document.querySelectorAll('.nav-links li a');
+            const navLinks = document.querySelectorAll('.nav-links li a:not([style*="display: none"])');
             for (let i = 0; i < navLinks.length; i++) {
                 // Set data-lang attribute only if it doesn't already have one
                 if (!navLinks[i].hasAttribute('data-lang')) {
@@ -225,6 +629,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     else if (navLinks[i].href.includes('#about')) navLinks[i].setAttribute('data-lang', 'nav-about');
                     else if (navLinks[i].href.includes('#contact')) navLinks[i].setAttribute('data-lang', 'nav-contact');
                 }
+            }
+
+            // Theme toggle text
+            const themeLightText = document.querySelector('.theme-text:first-of-type');
+            const themeDarkText = document.querySelector('.theme-text:last-of-type');
+
+            if (themeLightText && !themeLightText.hasAttribute('data-lang')) {
+                themeLightText.setAttribute('data-lang', 'theme-light');
+            }
+
+            if (themeDarkText && !themeDarkText.hasAttribute('data-lang')) {
+                themeDarkText.setAttribute('data-lang', 'theme-dark');
             }
 
             // Nav connect button
@@ -315,6 +731,31 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (introDesc && !introDesc.hasAttribute('data-lang')) {
                     introDesc.setAttribute('data-lang', 'idea-intro-desc');
                 }
+
+                // Market Research card
+                const marketResearchTitle = ideaSection.querySelector('.detail-card:nth-of-type(1) h3');
+                if (marketResearchTitle) marketResearchTitle.setAttribute('data-lang', 'market-research-title');
+
+                const marketResearchDesc = ideaSection.querySelector('.detail-card:nth-of-type(1) p');
+                if (marketResearchDesc) marketResearchDesc.setAttribute('data-lang', 'market-research-desc');
+
+                // User Interviews card
+                const userInterviewsTitle = ideaSection.querySelector('.detail-card:nth-of-type(2) h3');
+                if (userInterviewsTitle) userInterviewsTitle.setAttribute('data-lang', 'user-interviews-title');
+
+                const userInterviewsDesc = ideaSection.querySelector('.detail-card:nth-of-type(2) p');
+                if (userInterviewsDesc) userInterviewsDesc.setAttribute('data-lang', 'user-interviews-desc');
+
+                // Feasibility Study card
+                const feasibilityTitle = ideaSection.querySelector('.detail-card:nth-of-type(3) h3');
+                if (feasibilityTitle) feasibilityTitle.setAttribute('data-lang', 'feasibility-title');
+
+                const feasibilityDesc = ideaSection.querySelector('.detail-card:nth-of-type(3) p');
+                if (feasibilityDesc) feasibilityDesc.setAttribute('data-lang', 'feasibility-desc');
+
+                // What You'll Get section
+                const outcomeTitle = ideaSection.querySelector('.service-outcome h3');
+                if (outcomeTitle) outcomeTitle.setAttribute('data-lang', 'outcome-title');
             }
 
             // Detailed UI/UX section
@@ -334,6 +775,31 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (introDesc && !introDesc.hasAttribute('data-lang')) {
                     introDesc.setAttribute('data-lang', 'uiux-intro-desc');
                 }
+
+                // User Research card
+                const userResearchTitle = uiuxSection.querySelector('.detail-card:nth-of-type(1) h3');
+                if (userResearchTitle) userResearchTitle.setAttribute('data-lang', 'user-research-title');
+
+                const userResearchDesc = uiuxSection.querySelector('.detail-card:nth-of-type(1) p');
+                if (userResearchDesc) userResearchDesc.setAttribute('data-lang', 'user-research-desc');
+
+                // Information Architecture card
+                const infoArchTitle = uiuxSection.querySelector('.detail-card:nth-of-type(2) h3');
+                if (infoArchTitle) infoArchTitle.setAttribute('data-lang', 'info-arch-title');
+
+                const infoArchDesc = uiuxSection.querySelector('.detail-card:nth-of-type(2) p');
+                if (infoArchDesc) infoArchDesc.setAttribute('data-lang', 'info-arch-desc');
+
+                // Visual Design card
+                const visualDesignTitle = uiuxSection.querySelector('.detail-card:nth-of-type(3) h3');
+                if (visualDesignTitle) visualDesignTitle.setAttribute('data-lang', 'visual-design-title');
+
+                const visualDesignDesc = uiuxSection.querySelector('.detail-card:nth-of-type(3) p');
+                if (visualDesignDesc) visualDesignDesc.setAttribute('data-lang', 'visual-design-desc');
+
+                // What You'll Get section
+                const outcomeTitle = uiuxSection.querySelector('.service-outcome h3');
+                if (outcomeTitle) outcomeTitle.setAttribute('data-lang', 'outcome-title');
             }
 
             // Detailed Development section
@@ -353,6 +819,31 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (introDesc && !introDesc.hasAttribute('data-lang')) {
                     introDesc.setAttribute('data-lang', 'dev-intro-desc');
                 }
+
+                // Frontend Development card
+                const frontendTitle = devSection.querySelector('.detail-card:nth-of-type(1) h3');
+                if (frontendTitle) frontendTitle.setAttribute('data-lang', 'frontend-title');
+
+                const frontendDesc = devSection.querySelector('.detail-card:nth-of-type(1) p');
+                if (frontendDesc) frontendDesc.setAttribute('data-lang', 'frontend-desc');
+
+                // Backend Development card
+                const backendTitle = devSection.querySelector('.detail-card:nth-of-type(2) h3');
+                if (backendTitle) backendTitle.setAttribute('data-lang', 'backend-title');
+
+                const backendDesc = devSection.querySelector('.detail-card:nth-of-type(2) p');
+                if (backendDesc) backendDesc.setAttribute('data-lang', 'backend-desc');
+
+                // QA card
+                const qaTitle = devSection.querySelector('.detail-card:nth-of-type(3) h3');
+                if (qaTitle) qaTitle.setAttribute('data-lang', 'qa-title');
+
+                const qaDesc = devSection.querySelector('.detail-card:nth-of-type(3) p');
+                if (qaDesc) qaDesc.setAttribute('data-lang', 'qa-desc');
+
+                // What You'll Get section
+                const outcomeTitle = devSection.querySelector('.service-outcome h3');
+                if (outcomeTitle) outcomeTitle.setAttribute('data-lang', 'outcome-title');
             }
 
             // Detailed Deployment section
@@ -372,6 +863,31 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (introDesc && !introDesc.hasAttribute('data-lang')) {
                     introDesc.setAttribute('data-lang', 'deploy-intro-desc');
                 }
+
+                // App Store Submission card
+                const appStoreTitle = deploySection.querySelector('.detail-card:nth-of-type(1) h3');
+                if (appStoreTitle) appStoreTitle.setAttribute('data-lang', 'app-store-title');
+
+                const appStoreDesc = deploySection.querySelector('.detail-card:nth-of-type(1) p');
+                if (appStoreDesc) appStoreDesc.setAttribute('data-lang', 'app-store-desc');
+
+                // Google Play Submission card
+                const playStoreTitle = deploySection.querySelector('.detail-card:nth-of-type(2) h3');
+                if (playStoreTitle) playStoreTitle.setAttribute('data-lang', 'play-store-title');
+
+                const playStoreDesc = deploySection.querySelector('.detail-card:nth-of-type(2) p');
+                if (playStoreDesc) playStoreDesc.setAttribute('data-lang', 'play-store-desc');
+
+                // Continuous Deployment card
+                const cicdTitle = deploySection.querySelector('.detail-card:nth-of-type(3) h3');
+                if (cicdTitle) cicdTitle.setAttribute('data-lang', 'cicd-title');
+
+                const cicdDesc = deploySection.querySelector('.detail-card:nth-of-type(3) p');
+                if (cicdDesc) cicdDesc.setAttribute('data-lang', 'cicd-desc');
+
+                // What You'll Get section
+                const outcomeTitle = deploySection.querySelector('.service-outcome h3');
+                if (outcomeTitle) outcomeTitle.setAttribute('data-lang', 'outcome-title');
             }
 
             // Security section
@@ -390,6 +906,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 const introDesc = securitySection.querySelector('.pentest-intro p:first-of-type');
                 if (introDesc && !introDesc.hasAttribute('data-lang')) {
                     introDesc.setAttribute('data-lang', 'security-intro-desc');
+                }
+
+                // Mobile App Testing card
+                const mobileTestingTitle = securitySection.querySelector('.pentest-service:nth-of-type(1) h3');
+                if (mobileTestingTitle) mobileTestingTitle.setAttribute('data-lang', 'mobile-testing-title');
+
+                // Web App Testing card
+                const webTestingTitle = securitySection.querySelector('.pentest-service:nth-of-type(2) h3');
+                if (webTestingTitle) webTestingTitle.setAttribute('data-lang', 'web-testing-title');
+
+                // API Testing card
+                const apiTestingTitle = securitySection.querySelector('.pentest-service:nth-of-type(3) h3');
+                if (apiTestingTitle) apiTestingTitle.setAttribute('data-lang', 'api-testing-title');
+
+                // Methodology section
+                const methodologyTitle = securitySection.querySelector('.pentest-methodology h3');
+                if (methodologyTitle) methodologyTitle.setAttribute('data-lang', 'methodology-title');
+
+                // Methodology steps
+                const steps = securitySection.querySelectorAll('.step-content h4');
+                if (steps.length > 0) {
+                    for (let i = 0; i < steps.length; i++) {
+                        steps[i].setAttribute('data-lang', `step-${i + 1}-title`);
+                    }
+
+                    const stepDescriptions = securitySection.querySelectorAll('.step-content p');
+                    for (let i = 0; i < stepDescriptions.length; i++) {
+                        stepDescriptions[i].setAttribute('data-lang', `step-${i + 1}-desc`);
+                    }
                 }
             }
 
@@ -420,6 +965,22 @@ document.addEventListener('DOMContentLoaded', function () {
             if (footerText && !footerText.hasAttribute('data-lang')) {
                 footerText.setAttribute('data-lang', 'footer-text');
             }
+
+            // Add translations for all detailed service sections
+
+            // About section paragraphs
+            const aboutSection = document.querySelector('#about');
+            if (aboutSection) {
+                const aboutParagraphs = aboutSection.querySelectorAll('.about-content p');
+                if (aboutParagraphs.length > 0) {
+                    for (let i = 0; i < aboutParagraphs.length; i++) {
+                        aboutParagraphs[i].setAttribute('data-lang', `about-para-${i + 1}`);
+                    }
+                }
+            }
+
+            // Add attributes to list items and outcome items
+            addListItemAttributes();
         } catch (error) {
             console.error("Error adding language attributes:", error);
         }
@@ -439,6 +1000,9 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.classList.add('rtl');
             document.body.style.direction = 'rtl';
         }
+
+        // Re-add language attributes to ensure all elements have them
+        addLangAttributes();
 
         const elements = document.querySelectorAll('[data-lang]');
         console.log("Found elements with data-lang:", elements.length);
@@ -481,4 +1045,145 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('lang-ar').addEventListener('click', function () {
         setLanguage('ar');
     });
+
+    // Function to add data-lang attributes to list items
+    function addListItemAttributes() {
+        try {
+            // Idea Analysis section list items
+            const ideaSection = document.querySelector('#idea-analysis');
+            if (ideaSection) {
+                // Market Research list items
+                const marketResearchItems = ideaSection.querySelector('.detail-card:nth-of-type(1) ul').querySelectorAll('li');
+                for (let i = 0; i < marketResearchItems.length; i++) {
+                    marketResearchItems[i].setAttribute('data-lang', `market-list-${i + 1}`);
+                }
+
+                // User Interviews list items
+                const userInterviewsItems = ideaSection.querySelector('.detail-card:nth-of-type(2) ul').querySelectorAll('li');
+                for (let i = 0; i < userInterviewsItems.length; i++) {
+                    userInterviewsItems[i].setAttribute('data-lang', `user-interviews-list-${i + 1}`);
+                }
+
+                // Feasibility Study list items
+                const feasibilityItems = ideaSection.querySelector('.detail-card:nth-of-type(3) ul').querySelectorAll('li');
+                for (let i = 0; i < feasibilityItems.length; i++) {
+                    feasibilityItems[i].setAttribute('data-lang', `feasibility-list-${i + 1}`);
+                }
+
+                // Outcome items
+                const outcomeItems = ideaSection.querySelectorAll('.outcome-item p');
+                for (let i = 0; i < outcomeItems.length; i++) {
+                    outcomeItems[i].setAttribute('data-lang', `idea-outcome-${i + 1}`);
+                }
+            }
+
+            // UI/UX section list items
+            const uiuxSection = document.querySelector('#ui-ux');
+            if (uiuxSection) {
+                // User Research list items
+                const userResearchItems = uiuxSection.querySelector('.detail-card:nth-of-type(1) ul').querySelectorAll('li');
+                for (let i = 0; i < userResearchItems.length; i++) {
+                    userResearchItems[i].setAttribute('data-lang', `user-research-list-${i + 1}`);
+                }
+
+                // Information Architecture list items
+                const infoArchItems = uiuxSection.querySelector('.detail-card:nth-of-type(2) ul').querySelectorAll('li');
+                for (let i = 0; i < infoArchItems.length; i++) {
+                    infoArchItems[i].setAttribute('data-lang', `info-arch-list-${i + 1}`);
+                }
+
+                // Visual Design list items
+                const visualDesignItems = uiuxSection.querySelector('.detail-card:nth-of-type(3) ul').querySelectorAll('li');
+                for (let i = 0; i < visualDesignItems.length; i++) {
+                    visualDesignItems[i].setAttribute('data-lang', `visual-design-list-${i + 1}`);
+                }
+
+                // Outcome items
+                const outcomeItems = uiuxSection.querySelectorAll('.outcome-item p');
+                for (let i = 0; i < outcomeItems.length; i++) {
+                    outcomeItems[i].setAttribute('data-lang', `uiux-outcome-${i + 1}`);
+                }
+            }
+
+            // Development section list items
+            const devSection = document.querySelector('#development');
+            if (devSection) {
+                // Frontend Development list items
+                const frontendItems = devSection.querySelector('.detail-card:nth-of-type(1) ul').querySelectorAll('li');
+                for (let i = 0; i < frontendItems.length; i++) {
+                    frontendItems[i].setAttribute('data-lang', `frontend-list-${i + 1}`);
+                }
+
+                // Backend Development list items
+                const backendItems = devSection.querySelector('.detail-card:nth-of-type(2) ul').querySelectorAll('li');
+                for (let i = 0; i < backendItems.length; i++) {
+                    backendItems[i].setAttribute('data-lang', `backend-list-${i + 1}`);
+                }
+
+                // QA list items
+                const qaItems = devSection.querySelector('.detail-card:nth-of-type(3) ul').querySelectorAll('li');
+                for (let i = 0; i < qaItems.length; i++) {
+                    qaItems[i].setAttribute('data-lang', `qa-list-${i + 1}`);
+                }
+
+                // Outcome items
+                const outcomeItems = devSection.querySelectorAll('.outcome-item p');
+                for (let i = 0; i < outcomeItems.length; i++) {
+                    outcomeItems[i].setAttribute('data-lang', `dev-outcome-${i + 1}`);
+                }
+            }
+
+            // Deployment section list items
+            const deploySection = document.querySelector('#deployment');
+            if (deploySection) {
+                // App Store Submission list items
+                const appStoreItems = deploySection.querySelector('.detail-card:nth-of-type(1) ul').querySelectorAll('li');
+                for (let i = 0; i < appStoreItems.length; i++) {
+                    appStoreItems[i].setAttribute('data-lang', `app-store-list-${i + 1}`);
+                }
+
+                // Google Play Submission list items
+                const playStoreItems = deploySection.querySelector('.detail-card:nth-of-type(2) ul').querySelectorAll('li');
+                for (let i = 0; i < playStoreItems.length; i++) {
+                    playStoreItems[i].setAttribute('data-lang', `play-store-list-${i + 1}`);
+                }
+
+                // Continuous Deployment list items
+                const cicdItems = deploySection.querySelector('.detail-card:nth-of-type(3) ul').querySelectorAll('li');
+                for (let i = 0; i < cicdItems.length; i++) {
+                    cicdItems[i].setAttribute('data-lang', `cicd-list-${i + 1}`);
+                }
+
+                // Outcome items
+                const outcomeItems = deploySection.querySelectorAll('.outcome-item p');
+                for (let i = 0; i < outcomeItems.length; i++) {
+                    outcomeItems[i].setAttribute('data-lang', `deploy-outcome-${i + 1}`);
+                }
+            }
+
+            // Security section list items
+            const securitySection = document.querySelector('#pentest');
+            if (securitySection) {
+                // Mobile App Testing list items
+                const mobileTestingItems = securitySection.querySelector('.pentest-service:nth-of-type(1) ul').querySelectorAll('li');
+                for (let i = 0; i < mobileTestingItems.length; i++) {
+                    mobileTestingItems[i].setAttribute('data-lang', `mobile-testing-list-${i + 1}`);
+                }
+
+                // Web App Testing list items
+                const webTestingItems = securitySection.querySelector('.pentest-service:nth-of-type(2) ul').querySelectorAll('li');
+                for (let i = 0; i < webTestingItems.length; i++) {
+                    webTestingItems[i].setAttribute('data-lang', `web-testing-list-${i + 1}`);
+                }
+
+                // API Testing list items
+                const apiTestingItems = securitySection.querySelector('.pentest-service:nth-of-type(3) ul').querySelectorAll('li');
+                for (let i = 0; i < apiTestingItems.length; i++) {
+                    apiTestingItems[i].setAttribute('data-lang', `api-testing-list-${i + 1}`);
+                }
+            }
+        } catch (error) {
+            console.error("Error adding list item language attributes:", error);
+        }
+    }
 }); 

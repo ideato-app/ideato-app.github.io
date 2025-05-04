@@ -276,9 +276,9 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 5%;
+    padding: 1rem 5%;
     position: fixed;
-    top: 20px;
+    top: 10px;
     left: 5%;
     right: 5%;
     width: 90%;
@@ -287,13 +287,47 @@ p {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
-    border-radius: 50px;
+    border-radius: 30px;
     box-shadow: 0 8px 32px var(--glass-shadow);
     transition: all 0.3s ease;
 }
 
+/* Fix for RTL mode navbar */
+body.rtl .glass-nav,
+body.ltr .glass-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.rtl .logo {
+    order: 2;
+    display: flex !important;
+}
+
+body.rtl .logo-img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+
+    body.rtl .logo,
+    body.ltr .logo {
+        order: 1;
+        display: flex !important;
+    }
+
+    body.rtl .logo-img,
+    body.ltr .logo-img {
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
     letter-spacing: 1px;
@@ -303,9 +337,12 @@ p {
 }
 
 .logo-img {
-    height: 35px;
+    height: 30px;
     width: auto;
     max-width: 100%;
+    display: block !important;
+    /* Ensure the logo is always displayed */
+    transition: var(--transition);
 }
 
 .nav-links {
@@ -318,7 +355,7 @@ p {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0.8rem;
     flex-direction: row-reverse;
     order: 3;
 }
@@ -337,8 +374,15 @@ p {
     order: 3;
 }
 
+/* Fix for logo visibility in RTL and LTR modes */
+body.rtl .logo-img,
+body.ltr .logo-img {
+    display: block !important;
+    visibility: visible !important;
+}
+
 .nav-links li {
-    margin: 0 1.2rem;
+    margin: 0 0.8rem;
 }
 
 .nav-links a {
@@ -347,7 +391,7 @@ p {
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     padding: 5px 0;
 }
 
@@ -380,9 +424,9 @@ p {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     color: white;
     text-decoration: none;
-    padding: 0.7rem 1.5rem;
+    padding: 0.5rem 1.2rem;
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     transition: var(--transition);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -408,6 +452,7 @@ p {
     justify-content: center;
     padding: 0 5%;
     text-align: center;
+    margin-top: -20px;
 }
 
 .hero-content {
@@ -1089,16 +1134,20 @@ body.rtl .scroll-top {
 
 @media (max-width: 768px) {
     .glass-nav {
-        padding: 0.8rem 5%;
-        border-radius: 25px;
-        top: 10px;
+        padding: 0.6rem 4%;
+        border-radius: 20px;
+        top: 8px;
+    }
+
+    .mobile-only {
+        display: block;
     }
 
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 70%;
+        width: 75%;
         height: 100vh;
         background: var(--glass-bg);
         backdrop-filter: blur(20px);
@@ -1108,7 +1157,7 @@ body.rtl .scroll-top {
         justify-content: center;
         transition: var(--transition);
         z-index: 1001;
-        padding: 2rem 0;
+        padding: 4rem 0 2rem;
     }
 
     .nav-links.active {
@@ -1116,7 +1165,7 @@ body.rtl .scroll-top {
     }
 
     .nav-links li {
-        margin: 1rem 0;
+        margin: 0.8rem 0;
     }
 
     .nav-links a {
@@ -1126,6 +1175,8 @@ body.rtl .scroll-top {
     .menu-toggle {
         display: block;
         z-index: 1002;
+        margin-left: 0.3rem;
+        font-size: 1.3rem;
     }
 
     .nav-connect-btn {
@@ -1133,11 +1184,15 @@ body.rtl .scroll-top {
     }
 
     .logo-img {
-        height: 30px;
+        height: 25px;
     }
 
     .language-switcher {
-        margin-right: 1rem;
+        margin-right: 0.5rem;
+    }
+
+    .theme-text {
+        display: none;
     }
 
     .hero-buttons {
@@ -1192,34 +1247,48 @@ body.rtl .scroll-top {
         display: inline-block;
         text-align: left;
     }
+
+    body.rtl .nav-links {
+        right: auto;
+        left: -100%;
+    }
+
+    body.rtl .nav-links.active {
+        right: auto;
+        left: 0;
+    }
 }
 
 @media (max-width: 480px) {
     .glass-nav {
-        padding: 0.7rem 4%;
-        top: 8px;
-        border-radius: 20px;
+        padding: 0.5rem 3%;
+        top: 5px;
+        border-radius: 15px;
     }
 
     .logo-img {
-        height: 25px;
+        height: 22px;
     }
 
     .nav-right {
-        gap: 0.8rem;
+        gap: 0.5rem;
     }
 
     .language-switcher {
-        margin-right: 0.5rem;
+        margin-right: 0.3rem;
     }
 
     .lang-btn {
-        padding: 0.2rem 0.4rem;
+        padding: 0.15rem 0.4rem;
         font-size: 0.7rem;
     }
 
     .theme-toggle-label {
-        transform: scale(1);
+        transform: scale(0.9);
+    }
+
+    .menu-toggle {
+        font-size: 1.2rem;
     }
 
     .hero-content h1 {
@@ -1235,7 +1304,7 @@ body.rtl .scroll-top {
 .language-switcher {
     display: flex;
     align-items: center;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
 }
 
 .lang-btn {
@@ -1243,10 +1312,10 @@ body.rtl .scroll-top {
     color: var(--text-color);
     border: 1px solid var(--glass-border);
     border-radius: 4px;
-    padding: 0.3rem 0.6rem;
+    padding: 0.2rem 0.5rem;
     margin: 0 0.2rem;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     transition: var(--transition);
     font-weight: 600;
 }
@@ -1405,15 +1474,15 @@ body {
 
 /* Theme Switcher */
 .theme-switcher {
-    margin: 0 10px;
+    margin: 0 5px;
     position: relative;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 3px;
 }
 
 .theme-text {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-color);
     font-weight: 600;
     cursor: pointer;
@@ -1437,15 +1506,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px;
+    padding: 4px;
     position: relative;
-    height: 26px;
-    width: 50px;
-    transform: scale(1.2);
+    height: 22px;
+    width: 44px;
+    transform: scale(1.1);
 }
 
 .theme-toggle-label i {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .fa-moon {
@@ -1462,14 +1531,14 @@ body {
     position: absolute;
     top: 2px;
     left: 2px;
-    height: 22px;
-    width: 22px;
+    height: 18px;
+    width: 18px;
     transform: translateX(0px);
     transition: transform 0.2s linear;
 }
 
 .theme-toggle-checkbox:checked+.theme-toggle-label .theme-toggle-ball {
-    transform: translateX(24px);
+    transform: translateX(22px);
 }
 
 /* Dark Mode Specific Changes */
@@ -1553,7 +1622,7 @@ body.rtl .theme-toggle-ball {
 }
 
 body.rtl .theme-toggle-checkbox:checked+.theme-toggle-label .theme-toggle-ball {
-    transform: translateX(-24px);
+    transform: translateX(-22px);
 }
 
 /* Mobile-specific elements */

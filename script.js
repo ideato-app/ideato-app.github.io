@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'follow-us': 'Follow Us',
 
             // Footer
-            'footer-text': '© 2023 Ideato App Development. All rights reserved.',
+            'footer-text': '© 2025 Ideato App Development. All rights reserved.',
 
             // Common elements
             'outcome-title': 'What You\'ll Get',
@@ -413,8 +413,8 @@ document.addEventListener('DOMContentLoaded', function () {
             'nav-connect': 'تواصل معنا',
 
             // Theme toggle
-            'theme-light': 'وضع النهار',
-            'theme-dark': 'وضع الليل',
+            'theme-light': 'الفاتح',
+            'theme-dark': 'الداكن',
 
             // Hero section
             'hero-title': 'حوّل فكرتك إلى تطبيق واقعي',
@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'follow-us': 'تابعنا',
 
             // Footer
-            'footer-text': '© 2023 آيدياتو لتطوير التطبيقات. جميع الحقوق محفوظة.',
+            'footer-text': '© 2025 آيدياتو لتطوير التطبيقات. جميع الحقوق محفوظة.',
 
             // Common elements
             'outcome-title': 'ماذا ستحصل عليه',
@@ -1019,6 +1019,13 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.classList.remove('ltr');
             document.body.classList.add('rtl');
             document.body.style.direction = 'rtl';
+        }
+
+        // Ensure logo is visible
+        const logoImg = document.querySelector('.logo-img');
+        if (logoImg) {
+            logoImg.style.display = 'block';
+            logoImg.style.visibility = 'visible';
         }
 
         // Re-add language attributes to ensure all elements have them

@@ -408,227 +408,227 @@ document.addEventListener('DOMContentLoaded', function () {
             'nav-dev': 'التطوير',
             'nav-deploy': 'النشر',
             'nav-security': 'الحماية',
-            'nav-about': 'من نحن',
-            'nav-contact': 'اتصل بنا',
-            'nav-connect': 'تواصل معنا',
+            'nav-about': 'عننا',
+            'nav-contact': 'اتصل بينا',
+            'nav-connect': 'كلمنا',
 
             // Theme toggle
-            'theme-light': 'الفاتح',
-            'theme-dark': 'الداكن',
+            'theme-light': 'فاتح',
+            'theme-dark': 'غامق',
 
             // Hero section
-            'hero-title': 'حوّل فكرتك إلى تطبيق واقعي',
-            'hero-subtitle': 'نساعدك في تحويل أفكارك إلى منتجات رقمية باستخدام Flutter و FastAPI.',
-            'hero-connect': 'تواصل معنا',
+            'hero-title': 'حوّل فكرتك لتطبيق حقيقي',
+            'hero-subtitle': 'هنساعدك تحول أفكارك لمنتجات رقمية باستخدام Flutter و FastAPI.',
+            'hero-connect': 'كلمنا دلوقتي',
 
             // Services section
             'services-title': 'خدماتنا',
             'idea-service': 'تحليل وتقييم الفكرة',
-            'idea-desc': 'نساعدك في تطوير المفهوم والتحقق من إمكانية التسويق.',
+            'idea-desc': 'هنساعدك تطور فكرتك ونتأكد من إمكانية تسويقها.',
             'uiux-service': 'تصميم واجهات المستخدم UI/UX',
-            'uiux-desc': 'واجهات مستخدم جذابة وبديهية تحقق تجربة مستخدم متميزة.',
+            'uiux-desc': 'واجهات مستخدم جذابة وسهلة هتحسن تجربة المستخدم بشكل كبير.',
             'dev-service': 'تطوير التطبيقات',
-            'dev-desc': 'تطوير متعدد المنصات باستخدام Flutter وخدمات خلفية قوية بواسطة FastAPI.',
+            'dev-desc': 'تطوير على كل الأنظمة باستخدام Flutter وخدمات خلفية قوية بـ FastAPI.',
             'deploy-service': 'نشر التطبيقات',
-            'deploy-desc': 'نتولى عملية النشر الكاملة في متاجر التطبيقات المختلفة.',
+            'deploy-desc': 'هنتولى عملية النشر كاملة في متاجر التطبيقات المختلفة.',
             'security-service': 'اختبار الاختراق الأمني',
-            'security-desc': 'تقييم أمني شامل لاكتشاف الثغرات في تطبيقك قبل استغلالها من قبل المخترقين.',
+            'security-desc': 'تقييم أمني شامل لاكتشاف الثغرات في تطبيقك قبل ما يكتشفها الهاكرز.',
 
             // Idea Analysis Section
             'idea-title': 'تحليل وتقييم الفكرة',
-            'idea-intro-title': 'تحويل مفهومك إلى منتج قابل للتطبيق',
-            'idea-intro-desc': 'التطبيقات الناجحة تبدأ بأفكار مبتكرة، لكن ليست كل الأفكار تترجم إلى منتجات فعالة. خدمة تحليل وتقييم الفكرة لدينا تساعدك في صقل مفهومك، وتحديد السوق المستهدف، والتحقق من فرضياتك قبل الاستثمار في التطوير الشامل.',
+            'idea-intro-title': 'نحول فكرتك لمنتج ممكن تنفيذه',
+            'idea-intro-desc': 'التطبيقات الناجحة بتبدأ بأفكار مبتكرة، بس مش كل الأفكار بتتحول لمنتجات ناجحة. خدمة تحليل وتقييم الفكرة بتاعتنا هتساعدك تصقل فكرتك، وتحدد السوق المستهدف، وتتأكد من فرضياتك قبل ما تستثمر في التطوير الكامل.',
 
             // UI/UX Section
             'uiux-title': 'تصميم واجهات وتجربة المستخدم',
             'uiux-intro-title': 'تصميم تجارب مستخدم استثنائية',
-            'uiux-intro-desc': 'نجاح تطبيقك يعتمد بشكل أساسي على كيفية تفاعل المستخدمين معه. عملية تصميم واجهات وتجربة المستخدم لدينا تركز على إنشاء واجهات بديهية وتفاعلية وجذابة بصريًا تعزز رضا المستخدم وتزيد من معدلات الاحتفاظ.',
+            'uiux-intro-desc': 'نجاح تطبيقك بيعتمد بشكل أساسي على إزاي المستخدمين بيتفاعلوا معاه. عملية تصميم واجهات وتجربة المستخدم بتاعتنا بتركز على إنشاء واجهات سهلة وتفاعلية وجذابة بتحسن رضا المستخدم وبتزيد احتفاظك بالعملاء.',
 
             // Development Section
             'dev-title': 'تطوير التطبيقات',
-            'dev-intro-title': 'تحويل رؤيتك إلى واقع رقمي',
-            'dev-intro-desc': 'فريق التطوير لدينا متخصص في إنشاء تطبيقات عالية الأداء متعددة المنصات باستخدام Flutter للواجهة الأمامية و FastAPI للخدمات الخلفية. هذه المنهجية تضمن تطويرًا سريعًا مع واجهات مستخدم متميزة وأنظمة خلفية مرنة وقابلة للتوسع.',
+            'dev-intro-title': 'نحول رؤيتك لواقع رقمي',
+            'dev-intro-desc': 'فريق التطوير بتاعنا متخصص في إنشاء تطبيقات عالية الأداء على كل الأنظمة باستخدام Flutter للواجهة و FastAPI للباك اند. الطريقة دي بتضمن تطوير سريع مع واجهات مستخدم حلوة وأنظمة خلفية مرنة وقابلة للتوسع.',
 
             // Deployment Section
             'deploy-title': 'نشر وإطلاق التطبيقات',
-            'deploy-intro-title': 'من التطوير إلى أيدي المستخدمين',
-            'deploy-intro-desc': 'إطلاق تطبيقك في السوق يتضمن التعامل مع عمليات تقديم معقدة، وتحسين التوافق مع المنصات المختلفة، وضمان الامتثال لإرشادات المتاجر. نتولى عملية النشر بالكامل لتتمكن من التركيز على تنمية قاعدة المستخدمين.',
+            'deploy-intro-title': 'من التطوير لإيد المستخدمين',
+            'deploy-intro-desc': 'إطلاق تطبيقك في السوق بيتطلب التعامل مع عمليات تقديم معقدة، وتحسين التوافق مع الأنظمة المختلفة، وضمان الامتثال لشروط المتاجر. احنا هنتولى عملية النشر بالكامل عشان تقدر تركز على زيادة عدد المستخدمين.',
 
             // Security Section
             'security-title': 'أمن التطبيقات واختبار الاختراق',
             'security-intro-title': 'أهمية الأمن السيبراني',
-            'security-intro-desc': 'في البيئة الرقمية الحالية، الأمن ليس خيارًا بل ضرورة حتمية. ثغرة أمنية واحدة قد تؤدي إلى تسريب البيانات، واختراق معلومات المستخدمين، وإلحاق ضرر لا يمكن إصلاحه بسمعة علامتك التجارية.',
+            'security-intro-desc': 'في عالم اليوم الرقمي، الأمن مش اختياري، ده ضروري جدًا. ثغرة أمنية واحدة ممكن تؤدي لتسريب البيانات، واختراق معلومات المستخدمين، وضرر كبير لسمعة علامتك التجارية.',
 
             // About Section
             'about-title': 'عن الشركة',
 
             // Contact section
-            'contact-title': 'تواصل معنا',
-            'contact-intro': 'تواصل معنا مباشرة باستخدام إحدى الطرق التالية:',
+            'contact-title': 'كلمنا',
+            'contact-intro': 'تواصل معانا مباشرة باستخدام إحدى الطرق دي:',
             'follow-us': 'تابعنا',
 
             // Footer
-            'footer-text': '© 2025 آيدياتو لتطوير التطبيقات. جميع الحقوق محفوظة.',
+            'footer-text': '© 2025 آيدياتو لتطوير التطبيقات. كل الحقوق محفوظة.',
 
             // Common elements
-            'outcome-title': 'ماذا ستحصل عليه',
+            'outcome-title': 'اللي هتحصل عليه',
 
             // Idea Analysis cards
             'market-research-title': 'بحوث السوق',
-            'market-research-desc': 'نجري بحوثًا سوقية شاملة لتحديد الجمهور المستهدف، وتحليل المنافسين، وتحديد الفجوات السوقية التي يمكن لتطبيقك تلبيتها.',
+            'market-research-desc': 'هنعمل بحوث سوقية شاملة عشان نحدد الجمهور المستهدف، ونحلل المنافسين، ونحدد الفجوات اللي ممكن تطبيقك يملاها.',
             'user-interviews-title': 'مقابلات المستخدمين',
-            'user-interviews-desc': 'نتواصل مع المستخدمين المحتملين لجمع الرؤى، وفهم نقاط الألم، والتحقق من كون حلك يلبي احتياجات حقيقية.',
+            'user-interviews-desc': 'هنتواصل مع المستخدمين المحتملين عشان نجمع أفكارهم، ونفهم مشاكلهم، ونتأكد إن حلك بيلبي احتياجات حقيقية.',
             'feasibility-title': 'دراسة الجدوى',
-            'feasibility-desc': 'نقيّم الجدوى التقنية والمالية والتشغيلية لفكرتك للتأكد من إمكانية تنفيذها بنجاح.',
+            'feasibility-desc': 'هنقيّم الجدوى التقنية والمالية والتشغيلية لفكرتك عشان نتأكد إنها ممكن تتنفذ بنجاح.',
 
             // UI/UX cards
             'user-research-title': 'أبحاث المستخدم',
-            'user-research-desc': 'نبدأ بفهم احتياجات المستخدمين ودوافعهم وسلوكياتهم لإنشاء تجارب تتواصل معهم بفعالية.',
+            'user-research-desc': 'هنبدأ بفهم احتياجات المستخدمين ودوافعهم وسلوكياتهم عشان نعمل تجارب بتتواصل معاهم بشكل فعال.',
             'info-arch-title': 'هندسة المعلومات',
-            'info-arch-desc': 'نقوم بتنظيم المحتوى والوظائف بطريقة منطقية وسهلة الاستخدام، مما يوفر أساسًا قويًا لتطبيقك.',
+            'info-arch-desc': 'هننظم المحتوى والوظائف بطريقة منطقية وسهلة الاستخدام، ده بيوفر أساس قوي لتطبيقك.',
             'visual-design-title': 'التصميم المرئي',
-            'visual-design-desc': 'نبتكر واجهات مستخدم متميزة بصريًا تتوافق مع هوية علامتك التجارية وتعزز التفاعل مع المستخدم.',
+            'visual-design-desc': 'هنبتكر واجهات مستخدم حلوة بتتوافق مع هوية علامتك التجارية وبتعزز التفاعل مع المستخدم.',
 
             // Development cards
             'frontend-title': 'تطوير الواجهة الأمامية',
-            'frontend-desc': 'نستخدم Flutter لإنشاء واجهات مستخدم متجاوبة تعمل بكفاءة عبر منصات iOS وAndroid والويب.',
+            'frontend-desc': 'هنستخدم Flutter عشان نعمل واجهات مستخدم متجاوبة بتشتغل كويس على iOS وAndroid والويب.',
             'backend-title': 'تطوير الخدمات الخلفية',
-            'backend-desc': 'نقوم ببناء خدمات خلفية قوية وقابلة للتوسع باستخدام FastAPI لتوفير البنية التحتية اللازمة لوظائف التطبيق.',
+            'backend-desc': 'هنبني خدمات خلفية قوية وقابلة للتوسع باستخدام FastAPI عشان نوفر البنية التحتية اللازمة لتطبيقك.',
             'qa-title': 'ضمان الجودة',
-            'qa-desc': 'نطبق منهجيات اختبار صارمة لضمان خلو التطبيق من الأخطاء البرمجية وتحقيق الأداء المتوقع.',
+            'qa-desc': 'هنطبق طرق اختبار صارمة عشان نتأكد إن التطبيق خالي من الباجز وبيحقق الأداء المطلوب.',
 
             // Deployment cards
-            'app-store-title': 'النشر في متجر آبل',
-            'app-store-desc': 'نقوم بإعداد وتقديم تطبيقك إلى متجر Apple App Store، مع ضمان الامتثال لجميع المعايير والمتطلبات.',
-            'play-store-title': 'النشر في متجر جوجل بلاي',
-            'play-store-desc': 'نقوم بتحسين تطبيقك لنظام Android والتعامل مع كافة إجراءات النشر في Google Play Store.',
+            'app-store-title': 'النشر في App Store',
+            'app-store-desc': 'هنجهز ونقدم تطبيقك لمتجر Apple App Store، مع ضمان الامتثال لكل المعايير والمتطلبات.',
+            'play-store-title': 'النشر في جوجل بلاي',
+            'play-store-desc': 'هنحسن تطبيقك لنظام Android ونتعامل مع كل إجراءات النشر في Google Play Store.',
             'cicd-title': 'النشر المستمر للتحديثات',
-            'cicd-desc': 'نقوم بإعداد أنظمة CI/CD للتحديثات السلسة والصيانة المستمرة بعد الإطلاق الأولي لتطبيقك.',
+            'cicd-desc': 'هنعد أنظمة CI/CD للتحديثات السلسة والصيانة المستمرة بعد إطلاق تطبيقك.',
 
             // Security section
-            'mobile-testing-title': 'اختبار أمن تطبيقات الجوال',
+            'mobile-testing-title': 'اختبار أمن تطبيقات الموبايل',
             'web-testing-title': 'اختبار أمن تطبيقات الويب',
-            'api-testing-title': 'اختبار أمن واجهات برمجة التطبيقات',
-            'methodology-title': 'منهجيتنا في الاختبار الأمني',
+            'api-testing-title': 'اختبار أمن واجهات API',
+            'methodology-title': 'طريقتنا في الاختبار الأمني',
             'step-1-title': 'جمع المعلومات',
-            'step-1-desc': 'جمع البيانات حول التطبيق المستهدف لفهم بنيته الهيكلية ونقاط الدخول المحتملة.',
-            'step-2-title': 'تحليل نقاط الضعف',
-            'step-2-desc': 'تحديد الثغرات الأمنية باستخدام تقنيات الاختبار اليدوية والآلية المتقدمة.',
+            'step-1-desc': 'جمع بيانات عن التطبيق المستهدف عشان نفهم هيكله ونقط الدخول المحتملة.',
+            'step-2-title': 'تحليل نقط الضعف',
+            'step-2-desc': 'تحديد الثغرات الأمنية باستخدام تقنيات الاختبار اليدوية والآلية المتطورة.',
             'step-3-title': 'محاكاة الاختراق',
-            'step-3-desc': 'محاولة استغلال الثغرات المكتشفة بطريقة آمنة للتأكد من وجودها وتقييم تأثيرها المحتمل.',
+            'step-3-desc': 'محاولة استغلال الثغرات المكتشفة بطريقة آمنة عشان نتأكد من وجودها ونقيّم تأثيرها المحتمل.',
             'step-4-title': 'إعداد التقارير التفصيلية',
-            'step-4-desc': 'توثيق شامل للنتائج مع خطوات واضحة للمعالجة وتحديد أولويات الإصلاح.',
-            'step-5-title': 'دعم عمليات المعالجة',
-            'step-5-desc': 'المساعدة في معالجة الثغرات المكتشفة والتحقق من فعالية الإصلاحات المطبقة.',
+            'step-4-desc': 'توثيق شامل للنتائج مع خطوات واضحة للإصلاح وترتيب الأولويات.',
+            'step-5-title': 'دعم عمليات الإصلاح',
+            'step-5-desc': 'المساعدة في إصلاح الثغرات المكتشفة والتأكد من فعالية الحلول المطبقة.',
 
             // About paragraphs
-            'about-para-1': 'نحن "آيديا تو آب"، مطورو تطبيقات متخصصون في تحويل الأفكار المبتكرة إلى تطبيقات رقمية فعالة.',
-            'about-para-2': 'بفضل خبرتنا في Flutter لتطوير تطبيقات متعددة المنصات و FastAPI لبناء خدمات خلفية قوية، نقدم تجارب رقمية متكاملة تجسد رؤيتك على أرض الواقع.',
-            'about-para-3': 'نحن أيضًا متخصصون معتمدون في مجال الأمن السيبراني مع خبرة في اختبار الاختراق. نضمن أن تكون تطبيقاتك ليست فقط وظيفية وجذابة بل أيضًا محمية ضد التهديدات الأمنية الشائعة والمتقدمة.',
+            'about-para-1': 'احنا "آيديا تو آب"، مطوري تطبيقات متخصصين في تحويل الأفكار المبتكرة لتطبيقات رقمية فعالة.',
+            'about-para-2': 'بفضل خبرتنا في Flutter لتطوير تطبيقات على كل الأنظمة و FastAPI لبناء باك اند قوي، بنقدم تجارب رقمية متكاملة بتحقق رؤيتك على أرض الواقع.',
+            'about-para-3': 'احنا كمان متخصصين معتمدين في مجال الأمن السيبراني مع خبرة في اختبار الاختراق. بنضمن إن تطبيقاتك مش بس شغالة وحلوة لكن كمان محمية ضد التهديدات الأمنية العادية والمتقدمة.',
 
             // List items for Idea Analysis section
             'market-list-1': 'تحليل استراتيجي للمنافسين',
             'market-list-2': 'تحديد وتقسيم الجمهور المستهدف',
-            'market-list-3': 'تقييم اتجاهات ومؤشرات السوق',
+            'market-list-3': 'تقييم اتجاهات السوق',
             'market-list-4': 'تحليل SWOT (القوة، الضعف، الفرص، التهديدات)',
 
             'user-interviews-list-1': 'جلسات مجموعات التركيز',
             'user-interviews-list-2': 'مقابلات فردية معمقة',
-            'user-interviews-list-3': 'استبيانات واستطلاعات المستخدمين',
+            'user-interviews-list-3': 'استطلاعات رأي المستخدمين',
             'user-interviews-list-4': 'تحليل آراء وملاحظات المستخدمين',
 
-            'feasibility-list-1': 'تقييم الجدوى التقنية والتكنولوجية',
-            'feasibility-list-2': 'تحليل التكلفة مقابل العائد',
-            'feasibility-list-3': 'تحديد متطلبات الموارد البشرية والتقنية',
-            'feasibility-list-4': 'تقدير الإطار الزمني للتنفيذ',
+            'feasibility-list-1': 'تقييم الجدوى التقنية',
+            'feasibility-list-2': 'تحليل التكلفة والعائد',
+            'feasibility-list-3': 'تحديد الموارد المطلوبة',
+            'feasibility-list-4': 'تقدير المدة الزمنية للتنفيذ',
 
             // Outcome items for Idea Analysis
             'idea-outcome-1': 'تقرير تحقق شامل للفكرة',
-            'idea-outcome-2': 'رؤية منتجية محسنة ومحددة',
-            'idea-outcome-3': 'قائمة مميزات مرتبة حسب الأولوية',
-            'idea-outcome-4': 'خارطة طريق استراتيجية للتنفيذ',
+            'idea-outcome-2': 'رؤية منتج محسنة ومحددة',
+            'idea-outcome-3': 'قائمة مميزات مرتبة حسب الأهمية',
+            'idea-outcome-4': 'خطة طريق استراتيجية للتنفيذ',
 
             // List items for UI/UX section
             'user-research-list-1': 'تطوير نماذج شخصيات المستخدمين',
             'user-research-list-2': 'رسم خرائط رحلة المستخدم',
-            'user-research-list-3': 'تحليل السلوك والتفاعلات',
-            'user-research-list-4': 'اختبارات قابلية الاستخدام',
+            'user-research-list-3': 'تحليل سلوك المستخدم',
+            'user-research-list-4': 'اختبارات سهولة الاستخدام',
 
-            'info-arch-list-1': 'هيكلة المحتوى الرقمي',
+            'info-arch-list-1': 'هيكلة المحتوى',
             'info-arch-list-2': 'تصميم مخططات تدفق المستخدم',
-            'info-arch-list-3': 'إنشاء النماذج الأولية السلكية',
-            'info-arch-list-4': 'تصميم أنماط التنقل والتفاعل',
+            'info-arch-list-3': 'عمل المخططات الأولية',
+            'info-arch-list-4': 'تصميم أنماط التنقل',
 
-            'visual-design-list-1': 'تصميم واجهات متوافقة مع الهوية البصرية',
+            'visual-design-list-1': 'تصميم متوافق مع الهوية البصرية',
             'visual-design-list-2': 'تطوير نظام ألوان متناسق',
-            'visual-design-list-3': 'اختيار وتدرج الخطوط',
-            'visual-design-list-4': 'تصميم رموز وأيقونات مخصصة',
+            'visual-design-list-3': 'اختيار الخطوط المناسبة',
+            'visual-design-list-4': 'تصميم أيقونات مخصصة',
 
             // Outcome items for UI/UX
             'uiux-outcome-1': 'خريطة هيكلية للمعلومات',
-            'uiux-outcome-2': 'نماذج تفاعلية قابلة للاختبار',
-            'uiux-outcome-3': 'دليل أسلوب تصميم واجهة المستخدم',
-            'uiux-outcome-4': 'أصول تصميمية جاهزة للتنفيذ',
+            'uiux-outcome-2': 'نماذج تفاعلية للاختبار',
+            'uiux-outcome-3': 'دليل تصميم واجهة المستخدم',
+            'uiux-outcome-4': 'ملفات تصميم جاهزة للتنفيذ',
 
             // List items for Development section
-            'frontend-list-1': 'Cross-platform compatibility',
-            'frontend-list-2': 'Custom animations',
-            'frontend-list-3': 'Responsive layouts',
-            'frontend-list-4': 'Performance optimization',
+            'frontend-list-1': 'توافق بين كل الأنظمة',
+            'frontend-list-2': 'أنيميشن مخصص',
+            'frontend-list-3': 'تصميمات متجاوبة',
+            'frontend-list-4': 'تحسين الأداء',
 
-            'backend-list-1': 'RESTful API development',
-            'backend-list-2': 'Database design and structure',
-            'backend-list-3': 'Authentication and authorization systems',
-            'backend-list-4': 'Third-party service integrations',
+            'backend-list-1': 'تطوير واجهات API',
+            'backend-list-2': 'تصميم قواعد البيانات',
+            'backend-list-3': 'أنظمة التسجيل والصلاحيات',
+            'backend-list-4': 'ربط مع خدمات خارجية',
 
-            'qa-list-1': 'Automated testing',
-            'qa-list-2': 'Performance testing',
-            'qa-list-3': 'Cross-device compatibility testing',
-            'qa-list-4': 'Regression testing',
+            'qa-list-1': 'اختبارات آلية',
+            'qa-list-2': 'اختبارات الأداء',
+            'qa-list-3': 'اختبارات التوافق بين الأجهزة',
+            'qa-list-4': 'اختبارات الانحدار',
 
             // Outcome items for Development
-            'dev-outcome-1': 'Clean, documented source code',
-            'dev-outcome-2': 'Scalable backend architecture',
-            'dev-outcome-3': 'Thoroughly tested application',
-            'dev-outcome-4': 'Complete technical documentation',
+            'dev-outcome-1': 'كود نظيف وموثق',
+            'dev-outcome-2': 'بنية خلفية قابلة للتوسع',
+            'dev-outcome-3': 'تطبيق مختبر بشكل كامل',
+            'dev-outcome-4': 'توثيق تقني شامل',
 
             // List items for Deployment section
-            'app-store-list-1': 'App Store listing preparation',
-            'app-store-list-2': 'Screenshots and preview videos',
-            'app-store-list-3': 'Metadata optimization',
-            'app-store-list-4': 'Guidelines compliance verification',
+            'app-store-list-1': 'تجهيز صفحة التطبيق في App Store',
+            'app-store-list-2': 'لقطات شاشة وفيديوهات',
+            'app-store-list-3': 'تحسين البيانات الوصفية',
+            'app-store-list-4': 'التأكد من الامتثال للشروط',
 
-            'play-store-list-1': 'Google Play Store listing setup',
-            'play-store-list-2': 'Android-specific optimizations',
-            'play-store-list-3': 'App version management',
-            'play-store-list-4': 'Content rating compliance',
+            'play-store-list-1': 'إعداد صفحة التطبيق في Google Play',
+            'play-store-list-2': 'تحسينات خاصة بـ Android',
+            'play-store-list-3': 'إدارة الإصدارات',
+            'play-store-list-4': 'الامتثال لتصنيف المحتوى',
 
-            'cicd-list-1': 'CI/CD pipeline setup',
-            'cicd-list-2': 'Version and release management',
-            'cicd-list-3': 'Future updates strategy planning',
-            'cicd-list-4': 'Rollback procedures development',
+            'cicd-list-1': 'إعداد نظام CI/CD',
+            'cicd-list-2': 'إدارة الإصدارات والتحديثات',
+            'cicd-list-3': 'تخطيط استراتيجية التحديثات',
+            'cicd-list-4': 'إعداد إجراءات الاسترجاع',
 
             // Outcome items for Deployment
-            'deploy-outcome-1': 'App published in official stores',
-            'deploy-outcome-2': 'Analytics platforms integration',
-            'deploy-outcome-3': 'Crash reporting system setup',
-            'deploy-outcome-4': 'Integrated updates management system',
+            'deploy-outcome-1': 'تطبيق منشور في المتاجر الرسمية',
+            'deploy-outcome-2': 'ربط مع منصات التحليلات',
+            'deploy-outcome-3': 'نظام لتقارير الأعطال',
+            'deploy-outcome-4': 'نظام متكامل لإدارة التحديثات',
 
             // List items for Security section
-            'mobile-testing-list-1': 'Code-level security review',
-            'mobile-testing-list-2': 'Data storage vulnerabilities',
-            'mobile-testing-list-3': 'Authentication bypass testing',
-            'mobile-testing-list-4': 'API security assessment',
+            'mobile-testing-list-1': 'مراجعة أمنية للكود',
+            'mobile-testing-list-2': 'ثغرات تخزين البيانات',
+            'mobile-testing-list-3': 'اختبار تجاوز تسجيل الدخول',
+            'mobile-testing-list-4': 'تقييم أمن API',
 
-            'web-testing-list-1': 'OWASP Top 10 vulnerabilities evaluation',
-            'web-testing-list-2': 'Cross-site scripting (XSS) detection',
-            'web-testing-list-3': 'SQL injection testing',
-            'web-testing-list-4': 'Session management flaws',
+            'web-testing-list-1': 'تقييم ثغرات OWASP Top 10',
+            'web-testing-list-2': 'اكتشاف ثغرات XSS',
+            'web-testing-list-3': 'اختبار حقن SQL',
+            'web-testing-list-4': 'مشاكل إدارة الجلسات',
 
-            'api-testing-list-1': 'Authentication/authorization vulnerabilities',
-            'api-testing-list-2': 'Data validation vulnerabilities',
-            'api-testing-list-3': 'Rate limiting assessment',
-            'api-testing-list-4': 'Sensitive data exposure testing'
+            'api-testing-list-1': 'ثغرات التحقق والصلاحيات',
+            'api-testing-list-2': 'ثغرات التحقق من البيانات',
+            'api-testing-list-3': 'تقييم حدود الطلبات',
+            'api-testing-list-4': 'اختبار تسريب البيانات الحساسة'
         }
     };
 

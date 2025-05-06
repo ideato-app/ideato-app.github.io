@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Hero section
             'hero-title': 'حوّل فكرتك لتطبيق حقيقي',
-            'hero-subtitle': 'هنساعدك تحول أفكارك لمنتجات رقمية باستخدام Flutter و FastAPI.',
+            'hero-subtitle': 'هنساعدك تحول أفكارك لمنتجات رقمية  .',
             'hero-connect': 'كلمنا دلوقتي',
 
             // Services section

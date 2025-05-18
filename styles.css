@@ -2831,3 +2831,546 @@ table {
         scroll-behavior: auto !important;
     }
 }
+
+/* Mobile-Specific Adjustments */
+@media (max-width: 480px) {
+    /* Hero Section Mobile Adjustments */
+    .hero-section {
+        padding: var(--space-8) var(--space-4);
+        min-height: 100vh;
+        justify-content: flex-start;
+        padding-top: 100px;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 0 var(--space-4);
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: var(--space-4);
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: var(--space-6);
+    }
+
+    /* Button Adjustments */
+    .cta-buttons {
+        flex-direction: column;
+        gap: var(--space-4);
+        width: 100%;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: var(--space-4);
+        font-size: 1rem;
+    }
+
+    /* Stats Section Mobile */
+    .hero-stats {
+        margin-top: var(--space-8);
+        padding: var(--space-6);
+        flex-direction: column;
+        gap: var(--space-6);
+        width: 100%;
+    }
+
+    .stat-item {
+        width: 100%;
+        padding: var(--space-4);
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    /* Tech Stack Mobile */
+    .tech-stack {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-4);
+        margin-top: var(--space-6);
+    }
+
+    .tech-item {
+        width: calc(50% - var(--space-4));
+        justify-content: center;
+    }
+
+    /* RTL Specific Mobile Adjustments */
+    .rtl {
+        /* Arabic text adjustments */
+        .hero-content h1 {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            font-family: var(--font-secondary);
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            font-family: var(--font-secondary);
+        }
+
+        .cta-button {
+            font-family: var(--font-secondary);
+        }
+
+        .stat-label {
+            font-family: var(--font-secondary);
+        }
+    }
+
+    /* Language Switcher Mobile */
+    .language-switcher {
+        position: fixed;
+        top: var(--space-4);
+        right: var(--space-4);
+        z-index: var(--z-maximum);
+    }
+
+    /* Theme Toggle Mobile */
+    .theme-toggle-label {
+        width: 44px;
+        height: 22px;
+    }
+
+    .theme-toggle-ball {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Navigation Mobile */
+    .nav-container {
+        padding: var(--space-3) var(--space-4);
+    }
+
+    .logo-img {
+        height: 24px;
+    }
+
+    /* Floating Action Buttons */
+    .floating-buttons {
+        bottom: var(--space-4);
+        right: var(--space-4);
+        gap: var(--space-3);
+    }
+
+    .float-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+}
+
+/* Additional Touch Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Increase touch targets */
+    button,
+    .nav-links a,
+    .cta-button,
+    .tech-item,
+    .float-btn {
+        min-height: 44px;
+        padding: var(--space-3) var(--space-4);
+    }
+
+    /* Remove hover effects */
+    *:hover {
+        transform: none !important;
+    }
+
+    /* Improve scrolling */
+    .scroll-container {
+        -webkit-overflow-scrolling: touch;
+        overflow-y: auto;
+    }
+}
+
+/* Ensure proper scaling on different pixel densities */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+}
+
+/* Safe Area Insets for Notched Devices */
+@supports(padding: max(0px)) {
+    .hero-section,
+    .nav-container,
+    .floating-buttons {
+        padding-left: max(var(--space-4), env(safe-area-inset-left));
+        padding-right: max(var(--space-4), env(safe-area-inset-right));
+        padding-bottom: max(var(--space-4), env(safe-area-inset-bottom));
+    }
+}
+
+/* Mobile Layout Fixes */
+@media (max-width: 480px) {
+    /* Hero Title Fixes */
+    .hero-content {
+        padding: 0 var(--space-4);
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+        line-height: 1.3;
+        margin-bottom: var(--space-4);
+        width: 100%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    /* Language Switcher Fixed Position */
+    .language-switcher {
+        position: fixed;
+        top: var(--space-4);
+        right: var(--space-4);
+        z-index: var(--z-maximum);
+        background: var(--card-bg);
+        border-radius: var(--radius-lg);
+        padding: 4px;
+        box-shadow: var(--shadow-md);
+    }
+
+    /* Stats Grid Fixed Layout */
+    .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+        width: 100%;
+        margin-top: var(--space-8);
+        padding: var(--space-6);
+    }
+
+    .stat-item {
+        text-align: center;
+        width: 100%;
+        padding: var(--space-2);
+    }
+
+    /* Tech Stack Cards */
+    .tech-stack {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-4);
+        margin-top: var(--space-8);
+        width: 100%;
+    }
+
+    .tech-item {
+        aspect-ratio: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: var(--space-4);
+        width: 100%;
+        height: auto;
+    }
+
+    /* CTA Buttons */
+    .cta-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+        width: 100%;
+        padding: 0 var(--space-4);
+    }
+
+    .cta-button {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: var(--space-4);
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Floating Action Buttons */
+    .floating-buttons {
+        position: fixed;
+        bottom: var(--space-6);
+        right: var(--space-4);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+        z-index: var(--z-maximum);
+    }
+
+    .float-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-lg);
+    }
+
+    /* RTL Specific Fixes */
+    .rtl {
+        .hero-content h1 {
+            font-size: 2rem;
+            line-height: 1.4;
+            letter-spacing: -0.02em;
+            font-family: var(--font-secondary);
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            font-family: var(--font-secondary);
+            direction: rtl;
+        }
+
+        .hero-stats {
+            direction: rtl;
+        }
+
+        .stat-item {
+            direction: rtl;
+        }
+
+        .language-switcher {
+            left: var(--space-4);
+            right: auto;
+        }
+
+        .floating-buttons {
+            left: var(--space-4);
+            right: auto;
+        }
+    }
+}
+
+/* Safe Area Insets for Modern Devices */
+@supports(padding: max(0px)) {
+    .hero-section,
+    .floating-buttons,
+    .language-switcher {
+        padding-left: max(var(--space-4), env(safe-area-inset-left));
+        padding-right: max(var(--space-4), env(safe-area-inset-right));
+        padding-bottom: max(var(--space-4), env(safe-area-inset-bottom));
+        padding-top: max(var(--space-4), env(safe-area-inset-top));
+    }
+}
+
+/* Ensure Proper Text Rendering */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-content h1,
+    .hero-content p,
+    .cta-button,
+    .stat-item {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Fix Button Active States for Touch */
+@media (hover: none) and (pointer: coarse) {
+    .cta-button:active,
+    .tech-item:active,
+    .float-btn:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+}
+
+/* Additional Mobile Layout Fixes */
+@media (max-width: 480px) {
+    /* Header/Navigation Fixes */
+    .nav-container {
+        padding: var(--space-3) var(--space-4);
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-controls {
+        position: fixed;
+        top: var(--space-4);
+        right: var(--space-4);
+        display: flex;
+        gap: var(--space-3);
+        z-index: calc(var(--z-maximum) + 1);
+    }
+
+    .menu-toggle {
+        margin-left: auto;
+        padding: var(--space-2);
+        font-size: 1.5rem;
+    }
+
+    /* Language and Theme Controls */
+    .language-switcher {
+        position: static;
+        margin-right: var(--space-3);
+    }
+
+    .theme-switcher {
+        margin-right: var(--space-3);
+    }
+
+    /* Hero Section Refinements */
+    .hero-section {
+        padding-top: 80px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 var(--space-4);
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+        margin-bottom: var(--space-4);
+        padding: 0 var(--space-2);
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: var(--space-6);
+        padding: 0 var(--space-2);
+    }
+
+    /* CTA Buttons Refinements */
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: var(--space-3) var(--space-4);
+        font-size: 0.95rem;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--radius-lg);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Stats Section Refinements */
+    .hero-stats {
+        margin-top: var(--space-8);
+        width: calc(100% - var(--space-4) * 2);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+        padding: var(--space-6);
+        border-radius: var(--radius-lg);
+    }
+
+    .stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: var(--space-2);
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        line-height: 1;
+        margin-bottom: var(--space-2);
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* RTL Specific Refinements */
+    .rtl {
+        .nav-controls {
+            left: var(--space-4);
+            right: auto;
+            flex-direction: row-reverse;
+        }
+
+        .menu-toggle {
+            margin-right: auto;
+            margin-left: 0;
+        }
+
+        .hero-content h1 {
+            font-size: 1.8rem;
+            line-height: 1.4;
+            letter-spacing: 0;
+            font-family: var(--font-secondary);
+        }
+
+        .stat-item {
+            flex-direction: column-reverse;
+        }
+
+        .stat-label {
+            margin-bottom: var(--space-2);
+        }
+    }
+}
+
+/* Safe Area Adjustments */
+@supports(padding: max(0px)) {
+    .nav-container,
+    .nav-controls {
+        padding-top: max(var(--space-4), env(safe-area-inset-top));
+    }
+
+    .hero-section {
+        padding-top: max(80px, env(safe-area-inset-top) + 60px);
+    }
+}
+
+/* Touch Device Refinements */
+@media (hover: none) and (pointer: coarse) {
+    .cta-button,
+    .menu-toggle,
+    .language-switcher button,
+    .theme-switcher {
+        cursor: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .cta-button:active,
+    .menu-toggle:active {
+        transform: scale(0.98);
+    }
+}

@@ -276,17 +276,19 @@ section {
 /* Hero Section Enhancement */
 .hero-section {
     min-height: 100vh;
-    padding-top: var(--header-height);
+    padding-top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-top: var(--header-height);
 }
 
 .hero-content {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    padding: var(--space-4);
 }
 
 .hero-content h1 {
@@ -372,6 +374,14 @@ section {
 
     .service-details {
         grid-template-columns: 1fr;
+    }
+
+    .hero-section {
+        margin-top: var(--header-height-mobile);
+    }
+    
+    .hero-content {
+        padding: var(--space-3);
     }
 }
 

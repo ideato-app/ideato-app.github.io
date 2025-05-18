@@ -153,7 +153,9 @@
     --breakpoint-2xl: 1536px;
 
     /* Mobile-First Base Styles */
-    --header-height: 60px;
+    --header-height: 70px;
+    --header-height-tablet: 60px;
+    --header-height-mobile: 50px;
     --content-padding: 16px;
 }
 
@@ -206,7 +208,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: var(--header-height); /* Use CSS variable for consistency */
+    scroll-padding-top: var(--header-height);
 }
 
 body {
@@ -274,7 +276,7 @@ section {
 /* Hero Section Enhancement */
 .hero-section {
     min-height: 100vh;
-    padding-top: var(--header-height); /* Add padding equal to header height */
+    padding-top: var(--header-height);
     display: flex;
     align-items: center;
     justify-content: center;

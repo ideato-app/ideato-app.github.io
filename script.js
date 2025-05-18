@@ -204,6 +204,13 @@ document.addEventListener('DOMContentLoaded', function () {
             'security-service': 'Penetration Testing',
             'security-desc': 'Comprehensive security assessment to identify vulnerabilities in your application before hackers do.',
 
+            // Automation Section
+            'automation-service': 'Automation Services',
+            'automation-desc': 'Streamline your operations with powerful no-code and low-code automation solutions.',
+            'automation-title': 'Business Process Automation',
+            'automation-intro-title': 'Transform Your Business Operations',
+            'automation-intro-desc': 'We help businesses streamline their operations through powerful no-code and low-code automation. Using tools like n8n, we build custom workflows that connect your apps, automate routine tasks, and boost your team\'s productivity.',
+
             // Idea Analysis Section
             'idea-title': 'Idea Analysis & Validation',
             'idea-intro-title': 'Transform Your Concept into a Viable Product',
@@ -226,8 +233,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Security Section
             'security-title': 'App Security & Penetration Testing',
-            'security-intro-title': 'The Importance of Cybersecurity',
-            'security-intro-desc': 'In today\'s digital landscape, security is not an option, it\'s a necessity. A single security vulnerability can lead to data breaches, user information compromise, and irreparable damage to your brand reputation.',
+            'security-intro-title': 'Professional Security Assessment',
+            'security-intro-desc': 'Our expert security team conducts thorough penetration testing to identify vulnerabilities in your application before malicious actors do.',
 
             // About Section
             'about-title': 'About US',
@@ -434,6 +441,13 @@ document.addEventListener('DOMContentLoaded', function () {
             'deploy-desc': 'هنتولى عملية النشر كاملة في متاجر التطبيقات المختلفة.',
             'security-service': 'اختبار الاختراق الأمني',
             'security-desc': 'تقييم أمني شامل لاكتشاف الثغرات في تطبيقك قبل ما يكتشفها الهاكرز.',
+
+            // Automation Section
+            'automation-service': 'خدمات الأتمتة',
+            'automation-desc': 'تبسيط عملياتك مع حلول الأتمتة القوية بدون كود أو بكود منخفض',
+            'automation-title': 'أتمتة العمليات التجارية',
+            'automation-intro-title': 'تحويل عمليات عملك',
+            'automation-intro-desc': 'نساعد الشركات على تبسيط عملياتها من خلال الأتمتة القوية بدون كود أو بكود منخفض. باستخدام أدوات مثل n8n، نقوم ببناء سير عمل مخصص يربط تطبيقاتك ويؤتمت المهام الروتينية ويعزز إنتاجية فريقك.',
 
             // Idea Analysis Section
             'idea-title': 'تحليل وتقييم الفكرة',
@@ -732,6 +746,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     const cardDesc = serviceCards[4].querySelector('p');
                     if (cardTitle && !cardTitle.hasAttribute('data-lang')) cardTitle.setAttribute('data-lang', 'security-service');
                     if (cardDesc && !cardDesc.hasAttribute('data-lang')) cardDesc.setAttribute('data-lang', 'security-desc');
+                }
+
+                // Sixth card - Automation
+                if (serviceCards[5]) {
+                    const cardTitle = serviceCards[5].querySelector('h3');
+                    const cardDesc = serviceCards[5].querySelector('p');
+                    if (cardTitle && !cardTitle.hasAttribute('data-lang')) cardTitle.setAttribute('data-lang', 'automation-service');
+                    if (cardDesc && !cardDesc.hasAttribute('data-lang')) cardDesc.setAttribute('data-lang', 'automation-desc');
                 }
             }
 

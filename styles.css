@@ -206,7 +206,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Account for fixed header */
+    scroll-padding-top: var(--header-height); /* Use CSS variable for consistency */
 }
 
 body {
@@ -216,7 +216,8 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding-top: var(--header-height);
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
     width: 100%;
 }
@@ -272,10 +273,9 @@ section {
 
 /* Hero Section Enhancement */
 .hero-section {
-    min-height: calc(100vh - var(--header-height));
-    padding: 24px var(--content-padding);
+    min-height: 100vh;
+    padding-top: var(--header-height); /* Add padding equal to header height */
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -601,14 +601,16 @@ section {
 
 /* Navigation */
 .glass-nav {
-    height: var(--header-height);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    height: var(--header-height);
     background: var(--card-bg);
     border-bottom: 1px solid var(--border-color);
+    z-index: var(--z-sticky);
+    display: flex;
+    align-items: center;
 }
 
 .nav-container {
@@ -3394,11 +3396,10 @@ table {
     top: 0;
     left: 0;
     right: 0;
-    height: 70px;
+    height: var(--header-height);
     background: var(--card-bg);
     border-bottom: 1px solid var(--border-color);
     z-index: var(--z-sticky);
-    padding: 0;
     display: flex;
     align-items: center;
 }

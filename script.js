@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function () {
             navLinks.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
             // Toggle icon between bars and times
             const icon = menuToggle.querySelector('i');
             if (icon.classList.contains('fa-bars')) {
@@ -229,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'security-intro-desc': 'In today\'s digital landscape, security is not an option, it\'s a necessity. A single security vulnerability can lead to data breaches, user information compromise, and irreparable damage to your brand reputation.',
 
             // About Section
-            'about-title': 'About Me',
+            'about-title': 'About US',
 
             // Contact section
             'contact-title': 'Let\'s Connect',
@@ -291,9 +292,9 @@ document.addEventListener('DOMContentLoaded', function () {
             'step-5-desc': 'Assisting in remediating discovered vulnerabilities and verifying the effectiveness of applied fixes.',
 
             // About paragraphs
-            'about-para-1': 'I am Idea To App, an app developer specializing in turning ideas into real-world applications.',
-            'about-para-2': 'With expertise in Flutter for beautiful cross-platform apps and FastAPI for powerful backends, I create seamless digital experiences that bring your vision to reality.',
-            'about-para-3': 'I am also a certified security professional with expertise in penetration testing. I ensure your applications are not only functional and beautiful but also secure against common and advanced threats.',
+            'about-para-1': 'At Idea To App, we specialize in transforming innovative concepts into fully functional, real-world applications.',
+            'about-para-2': 'Our team leverages cutting-edge technologies like Flutter for stunning cross-platform mobile apps and FastAPI for robust, high-performance backends — delivering seamless, scalable digital solutions.',
+            'about-para-3': 'As a certified security-focused company, we also offer advanced penetration testing services to ensure your applications are not only beautifully designed and high-performing, but also secure against modern cyber threats.',
 
             // List items for Idea Analysis section
             'market-list-1': 'Competitor analysis',
@@ -522,9 +523,9 @@ document.addEventListener('DOMContentLoaded', function () {
             'step-5-desc': 'المساعدة في إصلاح الثغرات المكتشفة والتأكد من فعالية الحلول المطبقة.',
 
             // About paragraphs
-            'about-para-1': 'احنا "آيديا تو آب"، مطوري تطبيقات متخصصين في تحويل الأفكار المبتكرة لتطبيقات رقمية فعالة.',
-            'about-para-2': 'بفضل خبرتنا في Flutter لتطوير تطبيقات على كل الأنظمة و FastAPI لبناء باك اند قوي، بنقدم تجارب رقمية متكاملة بتحقق رؤيتك على أرض الواقع.',
-            'about-para-3': 'احنا كمان متخصصين معتمدين في مجال الأمن السيبراني مع خبرة في اختبار الاختراق. بنضمن إن تطبيقاتك مش بس شغالة وحلوة لكن كمان محمية ضد التهديدات الأمنية العادية والمتقدمة.',
+            'about-para-1': 'إحنا في "آيديا تو آب"، شركة متخصصة في تطوير التطبيقات، بنحوّل الأفكار المبتكرة إلى حلول رقمية فعالة ومتكاملة.',
+            'about-para-2': 'فريقنا بيستخدم أحدث التقنيات زي Flutter لتطبيقات متعددة المنصات، وFastAPI لبناء أنظمة خلفية قوية – علشان نقدّم لك تجربة رقمية سلسة ومحترفة تحقق رؤيتك.',
+            'about-para-3': 'وكمؤسسة معتمدة في مجال الأمن السيبراني، بنقدم خدمات احترافية في اختبار الاختراق لضمان إن تطبيقاتك مش بس متطورة وجذابة، لكن كمان محمية ضد التهديدات السيبرانية بأنواعها.',
 
             // List items for Idea Analysis section
             'market-list-1': 'تحليل استراتيجي للمنافسين',
@@ -1213,4 +1214,73 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error("Error adding list item language attributes:", error);
         }
     }
+
+    // Counter animation for stats
+    function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-target'));
+        const duration = 2500; // Animation duration in milliseconds
+        const start = 0;
+        const frameDuration = 1000/60; // 60fps
+        const totalFrames = Math.round(duration/frameDuration);
+        const increment = (target - start) / totalFrames;
+        let currentNumber = start;
+        let frame = 0;
+
+        const easeOutQuart = x => 1 - Math.pow(1 - x, 4); // Easing function for smooth animation
+
+        const animate = () => {
+            frame++;
+            const progress = frame / totalFrames;
+            const easedProgress = easeOutQuart(progress);
+            currentNumber = start + (target - start) * easedProgress;
+
+            if (frame <= totalFrames) {
+                element.textContent = Math.round(currentNumber);
+                requestAnimationFrame(animate);
+            } else {
+                element.textContent = target;
+            }
+        };
+
+        animate();
+    }
+
+    // Intersection Observer for stats animation
+    const statsNumbers = document.querySelectorAll('.stat-number');
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                animateCounter(entry.target);
+                entry.target.classList.add('animated');
+            }
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: '0px'
+    });
+
+    statsNumbers.forEach(number => {
+        statsObserver.observe(number);
+    });
+
+    // Workflow steps animation
+    function handleWorkflowAnimations() {
+        const workflowSteps = document.querySelectorAll('.workflow-step');
+        
+        workflowSteps.forEach((step, index) => {
+            // Add a small delay to each step
+            setTimeout(() => {
+                if (step.classList.contains('workflow-step')) {
+                    step.style.opacity = '1';
+                    step.style.transform = 'translateX(0)';
+                }
+            }, index * 200); // 200ms delay between each step
+        });
+    }
+
+    // Initialize animations when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        handleWorkflowAnimations();
+        // ... existing code ...
+    });
 }); 

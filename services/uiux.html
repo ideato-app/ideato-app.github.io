@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Design - Ideato App</title>
+    <link rel="icon" href="../img/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="../img/logo.png">
+    <meta name="theme-color" content="#0078CD">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-blur"></div>
+    </div>
+
+    <header class="header-sticky">
+        <nav class="glass-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../img/logo.png" alt="Ideato App Logo" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html#hero" data-lang="nav-home">Home</a></li>
+                    <li><a href="../index.html#services" data-lang="nav-services">Services</a></li>
+                    <li><a href="../index.html#about" data-lang="nav-about">About</a></li>
+                    <li><a href="../index.html#contact" data-lang="nav-contact">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <div class="language-switcher">
+                        <button id="lang-ar" class="lang-btn active">AR</button>
+                        <button id="lang-en" class="lang-btn">EN</button>
+                    </div>
+                    <div class="theme-switcher">
+                        <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+                        <label for="theme-toggle" class="theme-toggle-label">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <span class="theme-toggle-ball"></span>
+                        </label>
+                    </div>
+                    <a href="../index.html#contact" class="nav-connect-btn" data-lang="nav-connect">Connect with Us</a>
+                </div>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="ui-ux" class="detailed-service-section">
+            <div class="hero-content">
+                <h1>UI/UX Design Services</h1>
+                <p>Creating beautiful, intuitive interfaces that users love</p>
+            </div>
+
+            <div class="detailed-service-container">
+                <div class="glass-card service-intro">
+                    <h3>Transform Your User Experience</h3>
+                    <p>We create user-centered designs that not only look beautiful but also provide an exceptional user experience. Our UI/UX design process focuses on understanding your users' needs and creating interfaces that are both intuitive and engaging.</p>
+                </div>
+
+                <div class="service-details">
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-pencil-ruler"></i>
+                        </div>
+                        <h3>User Interface Design</h3>
+                        <p>Creating visually appealing and consistent interfaces that align with your brand.</p>
+                        <ul>
+                            <li>Custom interface design</li>
+                            <li>Visual hierarchy optimization</li>
+                            <li>Responsive layouts</li>
+                            <li>Brand consistency</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>User Experience Design</h3>
+                        <p>Ensuring your app is intuitive, accessible, and enjoyable to use.</p>
+                        <ul>
+                            <li>User research</li>
+                            <li>Information architecture</li>
+                            <li>User flow optimization</li>
+                            <li>Usability testing</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Interactive Prototyping</h3>
+                        <p>Building interactive prototypes to test and refine the user experience.</p>
+                        <ul>
+                            <li>High-fidelity prototypes</li>
+                            <li>Interactive animations</li>
+                            <li>User testing sessions</li>
+                            <li>Iterative improvements</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card service-outcome">
+                    <h3>What You'll Get</h3>
+                    <div class="outcome-list">
+                        <div class="outcome-item">
+                            <i class="fas fa-paint-brush"></i>
+                            <p>Professional UI Design</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-sitemap"></i>
+                            <p>Optimized User Flows</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <p>Responsive Layouts</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-chart-line"></i>
+                            <p>Improved User Engagement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UI/UX Design Process Section -->
+        <section class="workflow-section" id="workflow">
+            <div class="workflow-container">
+                <div class="section-header">
+                    <span class="section-subtitle">DESIGN PROCESS</span>
+                    <h2 class="section-title">Our UI/UX Design Workflow</h2>
+                    <p class="section-description">We follow a user-centered design process to create intuitive and engaging digital experiences.</p>
+                </div>
+
+                <div class="workflow-grid">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Research & Discovery</h3>
+                            <p class="step-description">We conduct user research, analyze competitors, and gather insights to understand your target audience and business goals.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Information Architecture</h3>
+                            <p class="step-description">We create user flows, sitemaps, and wireframes to establish a solid foundation for the user experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">UI Design & Prototyping</h3>
+                            <p class="step-description">We design beautiful, intuitive interfaces and create interactive prototypes for testing and validation.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">User Testing</h3>
+                            <p class="step-description">We conduct usability testing and gather feedback to ensure the design meets user needs and expectations.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">5</div>
+                        <div class="step-icon">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Design Handoff</h3>
+                            <p class="step-description">We prepare and deliver detailed design specifications and assets for seamless development implementation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="glass-card">
+                <h2>Ready to Transform Your User Experience?</h2>
+                <p>Let's create an interface that your users will love.</p>
+                <div class="hero-buttons">
+                    <a href="../index.html#contact" class="connect-button">Get Started</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <a href="../index.html">
+                <img src="../img/logo.png" alt="Ideato App Logo" class="footer-logo-img">
+            </a>
+            <p>&copy; 2024 Ideato App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html> 

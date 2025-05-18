@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Testing - Ideato App</title>
+    <link rel="icon" href="../img/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="../img/logo.png">
+    <meta name="theme-color" content="#0078CD">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-blur"></div>
+    </div>
+
+    <header class="header-sticky">
+        <nav class="glass-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../img/logo.png" alt="Ideato App Logo" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html#hero" data-lang="nav-home">Home</a></li>
+                    <li><a href="../index.html#services" data-lang="nav-services">Services</a></li>
+                    <li><a href="../index.html#about" data-lang="nav-about">About</a></li>
+                    <li><a href="../index.html#contact" data-lang="nav-contact">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <div class="language-switcher">
+                        <button id="lang-ar" class="lang-btn active">AR</button>
+                        <button id="lang-en" class="lang-btn">EN</button>
+                    </div>
+                    <div class="theme-switcher">
+                        <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+                        <label for="theme-toggle" class="theme-toggle-label">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <span class="theme-toggle-ball"></span>
+                        </label>
+                    </div>
+                    <a href="../index.html#contact" class="nav-connect-btn" data-lang="nav-connect">Connect with Us</a>
+                </div>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="security" class="detailed-service-section">
+            <div class="hero-content">
+                <h1>Security & Penetration Testing</h1>
+                <p>Comprehensive security assessment to protect your application</p>
+            </div>
+
+            <div class="detailed-service-container">
+                <div class="glass-card service-intro">
+                    <h3>Professional Security Assessment</h3>
+                    <p>Our expert security team conducts thorough penetration testing to identify vulnerabilities in your application before malicious actors do. We follow industry-standard methodologies and provide detailed reports with actionable recommendations.</p>
+                </div>
+
+                <div class="service-details">
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Vulnerability Assessment</h3>
+                        <p>Comprehensive security scanning and analysis.</p>
+                        <ul>
+                            <li>Automated scanning</li>
+                            <li>Manual testing</li>
+                            <li>Code review</li>
+                            <li>Configuration analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <h3>Penetration Testing</h3>
+                        <p>Simulated cyber attacks to find security weaknesses.</p>
+                        <ul>
+                            <li>API security testing</li>
+                            <li>Authentication testing</li>
+                            <li>Injection testing</li>
+                            <li>Session management</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security Hardening</h3>
+                        <p>Implementation of security best practices.</p>
+                        <ul>
+                            <li>Security configuration</li>
+                            <li>Patch management</li>
+                            <li>Access control</li>
+                            <li>Data encryption</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card service-outcome">
+                    <h3>What You'll Get</h3>
+                    <div class="outcome-list">
+                        <div class="outcome-item">
+                            <i class="fas fa-file-alt"></i>
+                            <p>Detailed Security Report</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-tasks"></i>
+                            <p>Remediation Plan</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <p>Security Recommendations</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-lock"></i>
+                            <p>Enhanced Protection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Testing Process Section -->
+        <section class="workflow-section" id="workflow">
+            <div class="workflow-container">
+                <div class="section-header">
+                    <span class="section-subtitle">SECURITY PROCESS</span>
+                    <h2 class="section-title">Our Security Testing Workflow</h2>
+                    <p class="section-description">We follow a comprehensive security assessment methodology to identify and mitigate potential vulnerabilities.</p>
+                </div>
+
+                <div class="workflow-grid">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Reconnaissance & Planning</h3>
+                            <p class="step-description">We gather information about your application's architecture, technologies, and potential attack surfaces.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Vulnerability Assessment</h3>
+                            <p class="step-description">We conduct automated and manual security scans to identify potential vulnerabilities and security gaps.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Penetration Testing</h3>
+                            <p class="step-description">We perform ethical hacking to exploit identified vulnerabilities and assess real-world security risks.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Documentation & Reporting</h3>
+                            <p class="step-description">We provide detailed reports of findings, risk assessments, and specific recommendations for remediation.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">5</div>
+                        <div class="step-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Remediation Support</h3>
+                            <p class="step-description">We assist in implementing security fixes and conduct follow-up testing to verify resolved vulnerabilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="glass-card">
+                <h2>Ready to Secure Your Application?</h2>
+                <p>Let's protect your app and your users' data with our comprehensive security assessment.</p>
+                <div class="hero-buttons">
+                    <a href="../index.html#contact" class="connect-button">Start Security Assessment</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <a href="../index.html">
+                <img src="../img/logo.png" alt="Ideato App Logo" class="footer-logo-img">
+            </a>
+            <p>&copy; 2024 Ideato App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html> 

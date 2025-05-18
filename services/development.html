@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Development - Ideato App</title>
+    <link rel="icon" href="../img/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="../img/logo.png">
+    <meta name="theme-color" content="#0078CD">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-blur"></div>
+    </div>
+
+    <header class="header-sticky">
+        <nav class="glass-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../img/logo.png" alt="Ideato App Logo" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html#hero" data-lang="nav-home">Home</a></li>
+                    <li><a href="../index.html#services" data-lang="nav-services">Services</a></li>
+                    <li><a href="../index.html#about" data-lang="nav-about">About</a></li>
+                    <li><a href="../index.html#contact" data-lang="nav-contact">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <div class="language-switcher">
+                        <button id="lang-ar" class="lang-btn active">AR</button>
+                        <button id="lang-en" class="lang-btn">EN</button>
+                    </div>
+                    <div class="theme-switcher">
+                        <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+                        <label for="theme-toggle" class="theme-toggle-label">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <span class="theme-toggle-ball"></span>
+                        </label>
+                    </div>
+                    <a href="../index.html#contact" class="nav-connect-btn" data-lang="nav-connect">Connect with Us</a>
+                </div>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="development" class="detailed-service-section">
+            <div class="hero-content">
+                <h1>App Development Services</h1>
+                <p>Building robust and scalable applications with Flutter and FastAPI</p>
+            </div>
+
+            <div class="detailed-service-container">
+                <div class="glass-card service-intro">
+                    <h3>Expert App Development</h3>
+                    <p>We specialize in creating high-performance, cross-platform applications using Flutter for the frontend and FastAPI for the backend. Our development process ensures your app is fast, reliable, and scalable.</p>
+                </div>
+
+                <div class="service-details">
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Development</h3>
+                        <p>Cross-platform mobile applications that work seamlessly on both iOS and Android.</p>
+                        <ul>
+                            <li>Flutter development</li>
+                            <li>Native performance</li>
+                            <li>Cross-platform compatibility</li>
+                            <li>Offline functionality</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Backend Development</h3>
+                        <p>Robust and scalable backend services using FastAPI.</p>
+                        <ul>
+                            <li>RESTful API development</li>
+                            <li>Database design</li>
+                            <li>Authentication & security</li>
+                            <li>API documentation</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Quality Assurance</h3>
+                        <p>Comprehensive testing and quality assurance processes.</p>
+                        <ul>
+                            <li>Automated testing</li>
+                            <li>Performance optimization</li>
+                            <li>Security testing</li>
+                            <li>Code review</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card service-outcome">
+                    <h3>What You'll Get</h3>
+                    <div class="outcome-list">
+                        <div class="outcome-item">
+                            <i class="fas fa-rocket"></i>
+                            <p>High-Performance App</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-mobile"></i>
+                            <p>Cross-Platform Support</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <p>Secure Backend</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-code-branch"></i>
+                            <p>Clean, Maintainable Code</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development Process Section -->
+        <section class="workflow-section" id="workflow">
+            <div class="workflow-container">
+                <div class="section-header">
+                    <span class="section-subtitle">DEVELOPMENT PROCESS</span>
+                    <h2 class="section-title">Our Development Workflow</h2>
+                    <p class="section-description">We follow an agile development methodology to deliver high-quality applications efficiently.</p>
+                </div>
+
+                <div class="workflow-grid">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Requirements Analysis</h3>
+                            <p class="step-description">We gather and analyze your requirements to create detailed technical specifications and project scope.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Architecture Design</h3>
+                            <p class="step-description">We design a scalable architecture using Flutter and FastAPI to ensure optimal performance and maintainability.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Agile Development</h3>
+                            <p class="step-description">We develop your application in sprints, with regular demos and feedback sessions to ensure alignment with your vision.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Testing & QA</h3>
+                            <p class="step-description">We perform thorough testing including unit tests, integration tests, and user acceptance testing.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">5</div>
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Deployment & Maintenance</h3>
+                            <p class="step-description">We handle deployment and provide ongoing maintenance and support to ensure your application runs smoothly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="glass-card">
+                <h2>Ready to Build Your App?</h2>
+                <p>Let's turn your vision into reality with our expert development team.</p>
+                <div class="hero-buttons">
+                    <a href="../index.html#contact" class="connect-button">Start Development</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <a href="../index.html">
+                <img src="../img/logo.png" alt="Ideato App Logo" class="footer-logo-img">
+            </a>
+            <p>&copy; 2024 Ideato App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html> 

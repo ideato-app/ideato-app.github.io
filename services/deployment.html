@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Deployment - Ideato App</title>
+    <link rel="icon" href="../img/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="../img/logo.png">
+    <meta name="theme-color" content="#0078CD">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-blur"></div>
+    </div>
+
+    <header class="header-sticky">
+        <nav class="glass-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../img/logo.png" alt="Ideato App Logo" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html#hero" data-lang="nav-home">Home</a></li>
+                    <li><a href="../index.html#services" data-lang="nav-services">Services</a></li>
+                    <li><a href="../index.html#about" data-lang="nav-about">About</a></li>
+                    <li><a href="../index.html#contact" data-lang="nav-contact">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <div class="language-switcher">
+                        <button id="lang-ar" class="lang-btn active">AR</button>
+                        <button id="lang-en" class="lang-btn">EN</button>
+                    </div>
+                    <div class="theme-switcher">
+                        <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+                        <label for="theme-toggle" class="theme-toggle-label">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <span class="theme-toggle-ball"></span>
+                        </label>
+                    </div>
+                    <a href="../index.html#contact" class="nav-connect-btn" data-lang="nav-connect">Connect with Us</a>
+                </div>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="deployment" class="detailed-service-section">
+            <div class="hero-content">
+                <h1>App Deployment Services</h1>
+                <p>Seamless deployment and publishing of your application</p>
+            </div>
+
+            <div class="detailed-service-container">
+                <div class="glass-card service-intro">
+                    <h3>Professional App Deployment</h3>
+                    <p>We handle the entire process of deploying your application to production and publishing it to app stores. Our deployment process ensures your app is properly configured, optimized, and ready for your users.</p>
+                </div>
+
+                <div class="service-details">
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3>Cloud Deployment</h3>
+                        <p>Secure and scalable cloud infrastructure setup.</p>
+                        <ul>
+                            <li>Server configuration</li>
+                            <li>Load balancing</li>
+                            <li>Auto-scaling setup</li>
+                            <li>Monitoring integration</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3>App Store Publishing</h3>
+                        <p>Complete app store submission and management.</p>
+                        <ul>
+                            <li>App store optimization</li>
+                            <li>Store listing setup</li>
+                            <li>Guidelines compliance</li>
+                            <li>Version management</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Maintenance & Updates</h3>
+                        <p>Ongoing support and maintenance services.</p>
+                        <ul>
+                            <li>Performance monitoring</li>
+                            <li>Security updates</li>
+                            <li>Bug fixes</li>
+                            <li>Feature updates</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card service-outcome">
+                    <h3>What You'll Get</h3>
+                    <div class="outcome-list">
+                        <div class="outcome-item">
+                            <i class="fas fa-rocket"></i>
+                            <p>Production-Ready App</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-store"></i>
+                            <p>App Store Presence</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-chart-line"></i>
+                            <p>Scalable Infrastructure</p>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <p>Ongoing Support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deployment Process Section -->
+        <section class="workflow-section" id="workflow">
+            <div class="workflow-container">
+                <div class="section-header">
+                    <span class="section-subtitle">DEPLOYMENT PROCESS</span>
+                    <h2 class="section-title">Our Deployment Workflow</h2>
+                    <p class="section-description">We ensure smooth and secure deployment of your applications using modern DevOps practices.</p>
+                </div>
+
+                <div class="workflow-grid">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Infrastructure Planning</h3>
+                            <p class="step-description">We assess your requirements and design the optimal infrastructure setup for your application.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Environment Setup</h3>
+                            <p class="step-description">We configure development, staging, and production environments with proper security measures.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">CI/CD Pipeline</h3>
+                            <p class="step-description">We implement automated build, test, and deployment pipelines for efficient delivery.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="workflow-connector"></div>
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Deployment & Testing</h3>
+                            <p class="step-description">We execute the deployment process and perform thorough testing in each environment.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">5</div>
+                        <div class="step-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Monitoring & Maintenance</h3>
+                            <p class="step-description">We set up monitoring tools and provide ongoing maintenance to ensure optimal performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="glass-card">
+                <h2>Ready to Launch Your App?</h2>
+                <p>Let's get your application into the hands of your users.</p>
+                <div class="hero-buttons">
+                    <a href="../index.html#contact" class="connect-button">Start Deployment</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <a href="../index.html">
+                <img src="../img/logo.png" alt="Ideato App Logo" class="footer-logo-img">
+            </a>
+            <p>&copy; 2024 Ideato App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html> 
